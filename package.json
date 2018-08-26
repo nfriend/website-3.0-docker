@@ -1,0 +1,18 @@
+{
+  "name": "website-3.0-docker",
+  "version": "1.0.0",
+  "description": "All configuration and deployment scripts needed to automate the deployment of my website via Docker.",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfriend/website-3.0-docker.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nfriend/website-3.0-docker/issues"
+  },
+  "homepage": "https://github.com/nfriend/website-3.0-docker#readme",
+  "dependencies": {
+    "@nathanfriend/inspirograph": "^1.0.0"
+  }
+}

@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+    nginx:
+        image: nginx:1.15.2-alpine
+        container_name: nginx-container
+        ports:
+            - '80:80'
+        volumes:
+            - ./nginx/conf/nginx.conf:/etc/nginx/conf.d/default.conf
+        networks:
+            - inspirograph-network
+    php:
+        image: php:fpm
+        container_name: inspirograph-php-container
+        volumes:
+            - ./code:/code
+        networks:
+            - inspirograph-network
+
+networks:
+    inspirograph-network:
+        driver: bridge
