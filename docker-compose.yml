@@ -6,8 +6,12 @@ services:
         container_name: nginx-container
         ports:
             - '80:80'
+            - '443:443'
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./nginx/certs:/etc/nginx/certs
+            - ./nginx/logs:/etc/nginx/logs
+            - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
         networks:
             - inspirograph-network
     php:
