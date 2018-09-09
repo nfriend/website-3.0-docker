@@ -10,6 +10,15 @@ TODO: Write more thorough instructions.
 3. Run `npm install` inside this repository
 4. Run `docker-compose up` inside this repository
 
+## Developing
+
+To run the Docker network locally, run at the root of this repository:
+
+`docker-compose -f .\docker-compose.yml -f .\docker-compose.dev.yml up --build`
+
+This will run the Docker network with some development options enabled.
+
 ## TODO
 
 - Install MySQL and connect it to PHP
+- MySQL user is currenty defined on '%' - defining the user as 'php' didn't work.  Investigate?

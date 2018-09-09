@@ -23,6 +23,18 @@ services:
             - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
         networks:
             - inspirograph-network
+    mysql:
+        image: inspirograph-mysql-image
+        container_name: inspirograph-mysql-container
+        build: ./mysql
+        volumes:
+            - ./mysql/conf:/etc/mysql/conf.d
+            - inspirograph-mysql-volume:/var/lib/mysql
+        networks:
+            - inspirograph-network
+
+volumes:
+    inspirograph-mysql-volume:
 
 networks:
     inspirograph-network:
