@@ -14,6 +14,6 @@
   "homepage": "https://github.com/nfriend/website-3.0-docker#readme",
   "dependencies": {
     "@nathanfriend/inspirograph": "^1.0.0",
-    "@nathanfriend/website-3.0": "^1.0.0"
+    "@nathanfriend/website-3.0": "^1.1.0"
   }
 }

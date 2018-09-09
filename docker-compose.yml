@@ -12,6 +12,7 @@ services:
             - ./nginx/certs:/etc/nginx/certs
             - ./nginx/logs:/etc/nginx/logs
             - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
+            - ./node_modules/@nathanfriend/website-3.0:/etc/nginx/html
         networks:
             - inspirograph-network
     php:
