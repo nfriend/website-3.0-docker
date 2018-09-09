@@ -16,8 +16,11 @@ services:
         networks:
             - inspirograph-network
     php:
-        image: php:fpm
+        image: inspirograph-php-image
         container_name: inspirograph-php-container
+        build: ./php
+        volumes:
+            - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
         networks:
             - inspirograph-network
 

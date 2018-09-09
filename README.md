@@ -9,3 +9,7 @@ TODO: Write more thorough instructions.
 2. Clone this repository on the server
 3. Run `npm install` inside this repository
 4. Run `docker-compose up` inside this repository
+
+## TODO
+
+- Install MySQL and connect it to PHP
