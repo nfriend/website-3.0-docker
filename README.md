@@ -12,11 +12,17 @@ TODO: Write more thorough instructions.
 
 ## Developing
 
+Some useful commands:
+
 To run the Docker network locally, run at the root of this repository:
 
 `docker-compose -f .\docker-compose.yml -f .\docker-compose.dev.yml up --build`
 
 This will run the Docker network with some development options enabled.
+
+To remove take down the network and delete the data volume:
+
+`docker-compose down; docker volume rm website-30-docker_inspirograph-mysql-volume`
 
 ## TODO
 
