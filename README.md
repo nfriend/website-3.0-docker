@@ -20,6 +20,12 @@ This will run the Docker network with some development options enabled.
 
 ## TODO
 
-- Install MySQL and connect it to PHP
+- Let's Encrypt
+- All static content
+- Roggle
+- Rook
+- Battleship
+- ldraw-visualizer
+- Node chat
 - MySQL user is currenty defined on '%' - defining the user as 'php' didn't work.  Investigate?
    - Now it is defined as 'inspirograph-php-container.%', which is better, but still what I want.
