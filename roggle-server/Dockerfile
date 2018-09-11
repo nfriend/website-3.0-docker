@@ -10,4 +10,4 @@ RUN npm install
 
 COPY ./node_modules/@nathanfriend/roggle/server/server.js ./server/server.js
 
-CMD [ "npm", "start" ]
+CMD npm run server
