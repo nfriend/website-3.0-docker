@@ -11,8 +11,9 @@ services:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
             - ./nginx/certs:/etc/nginx/certs
             - ./nginx/logs:/etc/nginx/logs
-            - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
             - ./node_modules/@nathanfriend/website-3.0:/etc/nginx/html
+            - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
+            - ./node_modules/@nathanfriend/roggle:/etc/nginx/html/roggle
         networks:
             - inspirograph-network
     php:
@@ -30,6 +31,15 @@ services:
         volumes:
             - ./mysql/conf:/etc/mysql/conf.d
             - inspirograph-mysql-volume:/var/lib/mysql
+        networks:
+            - inspirograph-network
+    roggle-server:
+        image: roggle-server-image
+        container_name: roggle-server-container
+        build:
+            context: .
+            dockerfile: ./roggle-server/Dockerfile
+        build: ./roggle-server
         networks:
             - inspirograph-network
 
