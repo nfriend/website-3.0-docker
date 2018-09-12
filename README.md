@@ -28,10 +28,9 @@ To remove take down the network and delete the data volume:
 
 - Let's Encrypt
 - All static content
-- Roggle
 - Rook
 - Battleship
 - ldraw-visualizer
 - Node chat
 - MySQL user is currenty defined on '%' - defining the user as 'php' didn't work.  Investigate?
-   - Now it is defined as 'inspirograph-php-container.%', which is better, but still what I want.
+   - Now it is defined as 'inspirograph-php-container.%', which is better, but still not what I want.
