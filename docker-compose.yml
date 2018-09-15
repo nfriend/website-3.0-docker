@@ -21,6 +21,7 @@ services:
             - ./node_modules/@nathanfriend/origins-host:/etc/nginx/html/origins
             - ./node_modules/@nathanfriend/webgl-chess:/etc/nginx/html/webgl-chess
             - ./node_modules/@nathanfriend/nfjs-demo:/etc/nginx/html/nfjs
+            - ./static/skills:/etc/nginx/html/skills
         networks:
             - inspirograph-network
         environment:

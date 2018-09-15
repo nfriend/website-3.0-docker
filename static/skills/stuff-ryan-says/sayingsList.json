@@ -1,0 +1,14 @@
+[
+    {
+        "audio": "easy.mp3",
+        "visual": "Easy!"
+    },
+    {
+        "audio": "gongshow.mp3",
+        "visual": "That's a gongshow!"
+    },
+    {
+        "audio": "hey.mp3",
+        "visual": "..., hey?"
+    }
+]
