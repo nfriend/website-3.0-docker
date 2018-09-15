@@ -14,8 +14,6 @@ RUN chmod u+x /etc/nginx/startup.sh
 
 # Setup certbot to renew the certs every day
 COPY renew /etc/periodic/daily/renew
-
-# TODO: test if the above works.
-# https://wiki.alpinelinux.org/wiki/Alpine_Linux:FAQ#My_cron_jobs_don.27t_run.3F
+RUN chmod a+x /etc/periodic/daily/renew
 
 ENTRYPOINT [ "/etc/nginx/startup.sh" ]

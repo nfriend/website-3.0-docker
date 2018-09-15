@@ -11,6 +11,7 @@ services:
             - '18734:18734'
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+            - nginx-certs-volume:/etc/letsencrypt/live
             - ./nginx/logs:/etc/nginx/logs
             - ./node_modules/@nathanfriend/website-3.0:/etc/nginx/html
             - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
@@ -49,6 +50,7 @@ services:
 
 volumes:
     inspirograph-mysql-volume:
+    nginx-certs-volume:
 
 networks:
     inspirograph-network:
