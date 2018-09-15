@@ -5,6 +5,9 @@ USER root
 # Install certbot and a few other nice-to-haves
 RUN apk add --no-cache certbot bash vim
 
+# Copy the dev certs in case we need to use them (see startup.sh)
+COPY dev-certs/* /temp/dev-certs/
+
 # Copy the nginx configuration we use just for getting an initial SSL cert
 COPY nginx.startup.conf /etc/nginx/nginx.startup.conf
 

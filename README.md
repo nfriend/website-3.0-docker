@@ -26,7 +26,6 @@ To remove take down the network and delete the data volume:
 
 ## TODO
 
-- Let's Encrypt
 - All static content
 - Rook
 - Battleship

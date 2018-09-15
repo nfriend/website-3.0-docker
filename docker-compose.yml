@@ -16,8 +16,11 @@ services:
             - ./node_modules/@nathanfriend/website-3.0:/etc/nginx/html
             - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
             - ./node_modules/@nathanfriend/roggle:/etc/nginx/html/roggle
+            - ./node_modules/@nathanfriend/cooltojs:/etc/nginx/html/cooltojs
         networks:
             - inspirograph-network
+        environment:
+            - USE_DEV_CERTS=true
         restart: always
     php:
         image: inspirograph-php-image

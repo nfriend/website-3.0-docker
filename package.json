@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/nfriend/website-3.0-docker#readme",
   "dependencies": {
+    "@nathanfriend/cooltojs": "^1.0.0",
     "@nathanfriend/inspirograph": "^1.1.3",
     "@nathanfriend/roggle": "^1.0.2",
     "@nathanfriend/website-3.0": "^1.1.0"
