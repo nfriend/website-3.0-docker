@@ -17,6 +17,10 @@ services:
             - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
             - ./node_modules/@nathanfriend/roggle:/etc/nginx/html/roggle
             - ./node_modules/@nathanfriend/cooltojs:/etc/nginx/html/cooltojs
+            - ./node_modules/@nathanfriend/theremin:/etc/nginx/html/theremin
+            - ./node_modules/@nathanfriend/origins-host:/etc/nginx/html/origins
+            - ./node_modules/@nathanfriend/webgl-chess:/etc/nginx/html/webgl-chess
+            - ./node_modules/@nathanfriend/nfjs-demo:/etc/nginx/html/nfjs
         networks:
             - inspirograph-network
         environment:

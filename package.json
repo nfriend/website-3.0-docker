@@ -15,7 +15,11 @@
   "dependencies": {
     "@nathanfriend/cooltojs": "^1.0.0",
     "@nathanfriend/inspirograph": "^1.1.3",
+    "@nathanfriend/nfjs-demo": "^1.0.0",
+    "@nathanfriend/origins-host": "^1.0.0",
     "@nathanfriend/roggle": "^1.0.2",
+    "@nathanfriend/theremin": "^1.0.0",
+    "@nathanfriend/webgl-chess": "^1.0.0",
     "@nathanfriend/website-3.0": "^1.1.0"
   }
 }
