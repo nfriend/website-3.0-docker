@@ -27,6 +27,7 @@ To remove take down the network and delete the data volume:
 ## TODO
 
 - All static content
+- Flash Briefings
 - Rook
 - Battleship
 - ldraw-visualizer
