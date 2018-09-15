@@ -3,7 +3,7 @@ FROM nginx:1.15.2-alpine
 USER root
 
 # Install certbot and a few other nice-to-haves
-RUN apk add --no-cache certbot bash vim
+RUN apk add --no-cache --update certbot bash vim nodejs nodejs-npm
 
 # Copy the dev certs in case we need to use them (see startup.sh)
 COPY dev-certs/* /temp/dev-certs/
