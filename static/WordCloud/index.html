@@ -1,0 +1,188 @@
+<html>
+<head>
+    <title>SoyRIM Word Cloud</title>
+    <style>
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        #soybean-image {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -59px;
+            top: 50%;
+            left: 50%;
+            z-index: 7;
+            display: none;
+        }
+
+        #soybean-container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -300px;
+            margin-top: -150px;
+            height: 300px;
+            width: 600px;
+            z-index: 7;
+        }
+    </style>
+    <script src="./cloud.js"></script>
+    <script src="./three.min.js"></script>
+
+    <script>
+        function init() {
+            var w = document.body.clientWidth, h = document.body.clientHeight;
+            var clouder = document.getElementById('clouder');
+
+            clouder.style.height = h * 2 / 3;
+            clouder.style.width = h * 2 / 3;
+            clouder.style.position = "absolute";
+            clouder.style.left = w / 2 - (h * 2 / 6);
+            clouder.style.top = h / 6;
+            clouder.style.border = "0px solid black";
+
+            window.clouder = new Clouder({
+                container: clouder,
+                tags: createTags(),
+                fontSize: 20,
+                callback: function (id) { }
+            });
+
+            initThreeJs();
+        } // init
+
+        function createTags() {
+            var elems = [];
+            elems.push({ text: "Safety", id: "1", weight: 1.0 });
+            elems.push({ text: "Global", id: "2", weight: 0.5 });
+            elems.push({ text: "Enabling", id: "3", weight: 0.5 });
+            elems.push({ text: "Efficient", id: "4", weight: 0.5 });
+            elems.push({ text: "Productive", id: "5", weight: 0.5 });
+            elems.push({ text: "Innovative", id: "6", weight: 1.0 });
+            elems.push({ text: "Respect", id: "7", weight: 1.0 });
+            elems.push({ text: "Collaboration", id: "8", weight: 1.0 });
+            elems.push({ text: "Streamlined", id: "9", weight: 1.0 });
+            elems.push({ text: "Sustainability", id: "10", weight: 0.1 });
+            elems.push({ text: "Proactive", id: "20", weight: 0.1 });
+            elems.push({ text: "Diversity", id: "30", weight: 0.5 });
+            elems.push({ text: "Ethical", id: "40", weight: 1.0 });
+            elems.push({ text: "Stewardship", id: "50", weight: 0.1 });
+            elems.push({ text: "Wellness", id: "60", weight: 0.1 });
+            elems.push({ text: "Balanced", id: "70", weight: 0.5 });
+            elems.push({ text: "Goal&nbsp;Oriented", id: "80", weight: 0.5 });
+            elems.push({ text: "Holistic", id: "90", weight: 0.5 });
+            elems.push({ text: "Strategic", id: "100", weight: 0.5 });
+            elems.push({ text: "Dynamic", id: "200", weight: 0.1 });
+            elems.push({ text: "Value", id: "300", weight: 1.0 });
+            elems.push({ text: "Responsive", id: "400", weight: 1.0 });
+            elems.push({ text: "Impactful", id: "500", weight: 0.1 });
+            elems.push({ text: "Rock&nbsp;Star", id: "600", weight: 0.1 });
+            elems.push({ text: "Ryan&nbsp;Vincent", id: "700", weight: 1.0 });
+            elems.push({ text: "Unified", id: "800", weight: 0.5 });
+            return elems;
+        } // createTags
+
+        function initThreeJs() {
+            var containerDiv = document.getElementById("soybean-container");
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+            var renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            containerDiv.appendChild(renderer.domElement);
+
+            var sphereGeom = new THREE.SphereGeometry(3, 32, 16);
+            sphereGeom.applyMatrix(new THREE.Matrix4().makeScale(1.0, .9, 0.7));
+
+            var cubeGeom = new THREE.CubeGeometry(3, 3, 3);
+
+            var light2 = new THREE.AmbientLight(0x444444);
+            scene.add(light2);
+
+            var moonTexture = THREE.ImageUtils.loadTexture('images/soybeanTexture.jpg');
+            var moonMaterial = new THREE.MeshLambertMaterial({ map: moonTexture });
+            var moon = new THREE.Mesh(sphereGeom.clone(), moonMaterial);
+            moon.rotation.x += Math.PI;
+            moon.rotation.y += 2;
+            moon.position.set(0, 0, 0);
+            scene.add(moon);
+
+            var pointLight = new THREE.PointLight(0xFFFFFF);
+            pointLight.position.x = 10;
+            pointLight.position.y = 50;
+            pointLight.position.z = 130;
+            scene.add(pointLight);
+
+            camera.position.z = 5;
+
+            var render = function () {
+                requestAnimationFrame(render);
+
+                //moon.rotation.x += 0.001;
+                //moon.rotation.y -= 0.001;
+
+                if (window.x && window.y && window.oldX && window.oldY)
+                {
+                    var yAxis = new THREE.Vector3(0, 1, 0);
+                    var xAxis = new THREE.Vector3(1, 0, 0);
+
+                    if (window.mouseIsIn) {
+                        var xAxisMatrix = new THREE.Matrix4().makeRotationAxis(xAxis, window.y * -.015);
+                        var yAxisMatrix = new THREE.Matrix4().makeRotationAxis(yAxis, window.x * -.015);
+                    }
+                    else {
+                        var xAxisMatrix = new THREE.Matrix4().makeRotationAxis(xAxis, (window.y * -.015) * .2);
+                        var yAxisMatrix = new THREE.Matrix4().makeRotationAxis(yAxis, (window.x * -.015) * .2);
+                    }
+
+
+                    moon.applyMatrix(xAxisMatrix);
+                    moon.applyMatrix(yAxisMatrix);
+
+                    window.oldX = window.x;
+                    window.oldY = window.y;
+                }
+                else
+                {
+                    window.oldX = window.x;
+                    window.oldY = window.y;
+                    window.oldTheta = window.theta;
+                    window.oldRho = window.rho;
+                }
+
+
+                renderer.render(scene, camera);
+            };
+
+            render();
+        }
+
+        var rotWorldMatrix;
+        // Rotate an object around an arbitrary axis in world space       
+        function rotateAroundWorldAxis(object, axis, radians) {
+            rotWorldMatrix = new THREE.Matrix4();
+            rotWorldMatrix.makeRotationAxis(axis.normalize(), radians);
+
+            // old code for Three.JS pre r54:
+            //  rotWorldMatrix.multiply(object.matrix);
+            // new code for Three.JS r55+:
+            rotWorldMatrix.multiply(object.matrix);                // pre-multiply
+
+            object.matrix = rotWorldMatrix;
+
+            // old code for Three.js pre r49:
+            // object.rotation.getRotationFromMatrix(object.matrix, object.scale);
+            // new code for Three.js r50+:
+            object.rotation.setEulerFromRotationMatrix(object.matrix);
+        }
+    </script>
+
+</head>
+<body onload="init();">
+    <div id="clouder" />
+    <img src="soybean.png" id="soybean-image" />
+    <div id="soybean-container" />
+</body>
+</html>

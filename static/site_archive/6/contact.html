@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Nathan Friend: Contact</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="Friend" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		
+		<link rel="stylesheet" type="text/css" href="template.css">
+		
+	
+	<script type="text/javascript" src="googleanalytics.js"></script>
+	<script type="text/javascript">
+	
+		function movepic(img_name, img_src) {			
+			document.getElementById(img_name).src = img_src;
+		}
+		
+		function redirect() {
+			window.location = "index.html";
+		}
+		
+	</script>
+	</head>	
+	<body>		
+		<div id="container">
+			<div id="homeclick" onclick="redirect()" onmouseover="movepic('homebackgroundimg', 'homebackground2.png')" onmouseout="movepic('homebackgroundimg', 'homebackground.png')"></div>
+			<div id="contactclick"  onmouseover="movepic('contactbackgroundimg', 'contactbackground2.png')" onmouseout="movepic('contactbackgroundimg', 'contactbackground.png')"></div>
+		
+			<div id="background">
+				<img id="backgroundimg" src="scrollbackground.jpg" />
+				<a href="index.html"><img style="border-style: none;" id="homebackgroundimg" src="homebackground.png"/></a>	
+				<img id="contactbackgroundimg" src="contactbackground.png" />
+			</div>
+			<div id="menus">
+				<p style="position: absolute; top: 2px; left: 53px; color: #E0E0E0; font-size: 32px; padding: 0px; margin: 0px;">home</p>
+				<p style="position: absolute; top: 2px; left: 200px; color: #E0E0E0; font-size: 32px; padding: 0px; margin: 0px;">contact</p>
+			</div>
+			<div id="contentcontainer">
+				<div id="content">				
+					<p style="font-size: 2.7em; margin-bottom: 5px;">I'd love to chat.</p>
+					<hr>
+					<p style="margin-top: 40px;">Here are a few ways to get in touch with me:</p>
+					<a href="http://www.facebook.com/nathan.friend" ><img style="border-style: none;" src="facebook.png"/></a>
+					<a href="http://www.twitter.com/NathanAFriend"><img style="border-style: none;" src="twitter.png"/></a>
+					<a href="http://www.linkedin.com/in/nfriend"><img style="border-style: none;" src="linkedin.png"/></a>
+					<p style="margin-bottom: 0px;">Or, if you prefer email -</p>					
+					<p style="margin-top: 10px; font-size: 2.0em"><a href="mailto:contact@nathanfriend.com" style="color: black; text-decoration: none;">contact@nathanfriend.com</a></p>								
+				</div>				
+				<div class="cleared"></div>
+			</div>
+			<div id="preload">
+				<img src="contactbackground2.png" />
+				<img src="homebackground2.png" />
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,140 @@
+@font-face 
+{
+	font-family: nathanshandie;
+	src: url("nathanshand.eot");
+}
+
+@font-face 
+{
+	font-family: nathanshand;
+	src: url("nathanshand.ttf");
+}
+
+#enterPicture
+{
+	position: absolute;
+	left: 50%;
+	margin-top: 80px;
+	margin-left: -450px;	
+}
+
+#leftBorder
+{
+	position: fixed;
+	top: 0%;
+	left: 50%;
+	margin-left: -940px;
+}
+
+#rightBorder
+{
+	position: fixed;
+	top: 0%;
+	right: 50%;
+	margin-right: -913px;
+}
+
+#mainDiv
+{
+	margin-left: -500px;
+	left: 50%;
+	position: relative;
+	height: 1800px;	
+  	width: 1000px;
+}
+
+#div1
+{
+	height: 900px;
+	width: 1000px;
+}
+
+#div2
+{
+	height: 900px;
+	width: 1000px;	
+}
+#div3
+{
+	height: 900px;
+	width: 1000px;	
+}
+
+.home
+{
+	margin-left: 100px;
+	position: relative;
+	float: left;
+	top: 50px;
+}
+
+.news
+{
+	position: relative;
+	margin-left: 32px;
+	top: 50px;
+}
+
+.links
+{
+	margin-right: 100px;
+	position: relative;
+	float: right;
+	top: 50px;
+}
+
+.leftbullet
+{
+	position: absolute;
+	left: 5%;	
+}
+
+.leftlink
+{
+	position: absolute;
+	left: 15%;	
+}
+
+.centerbullet
+{
+	position: absolute;
+	left: 35%;
+}
+
+.centerlink
+{
+	position: absolute;
+	left: 45%;
+}
+
+.rightbullet
+{
+	position: absolute;
+	left: 65%;
+}
+
+.rightlink
+{
+	position: absolute;
+	left: 75%;
+}
+
+.upperbullet
+{
+	margin-top: 250px;
+}
+
+
+.middlebullet
+{
+	margin-top: 400px;
+}
+
+.lowerbullet
+{
+	margin-top: 550px;
+}
+
+body {
+	overflow: hidden;
+}

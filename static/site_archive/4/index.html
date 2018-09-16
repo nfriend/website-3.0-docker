@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Nathan Friend</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="Friend" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="stylesheet" type="text/css" href="template.css">
+		
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		
+		<script type="text/javascript">
+			google.load("jquery", "1");			
+		</script>
+		
+		<script type="text/javascript" src="jquery.scrollTo-min.js"></script>
+		<script type="text/javascript" src="easing.js"></script>
+		
+		<script type="text/javascript">
+			$(init);
+			
+			function init() {				
+				$("#aboutbutton").click(scrollover);
+				$("#contactbutton").click(scrolldown);
+				$("#linksbutton").click(scrollcorner);
+				
+				$("#rhomebutton").click(scrollhome);
+				$("#rcontactbutton").click(scrolldown);
+				$("#rlinksbutton").click(scrollcorner);
+				
+				$("#caboutbutton").click(scrollover);
+				$("#ccontactbutton").click(scrolldown);
+				$("#chomebutton").click(scrollhome);
+				
+				$("#baboutbutton").click(scrollover);
+				$("#bhomebutton").click(scrollhome);
+				$("#blinksbutton").click(scrollcorner);
+			}
+			
+			function scrollover() {
+				$.scrollTo( {top:'0%', left:'100%'}, 1000,  {easing:'easeInOutExpo'});
+			}
+			
+			function scrolldown() {
+				$.scrollTo({top:'100%', left:'0%'}, 1000, {easing:'easeInOutExpo'});
+			}
+			
+			function scrollcorner() {
+				$.scrollTo({top:'100%', left:'100%'}, 1000, {easing:'easeInOutExpo'});
+			}
+			
+			function scrollhome() {
+				$.scrollTo({top:'0%', left:'0%'}, 1000, {easing:'easeInOutExpo'});
+			}
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<div id="maincontainer">
+			<div id="container">
+				<img id="backtransparency" src="backtransparency.png" />
+				<img id="mainpicture" src="cellokeyboard.png" />
+				<img id="signature" src="signature.png" />
+				<img id="aboutbutton" src="about.png" />
+				<img id="contactbutton" src="contact.PNG" />
+				<img id="linksbutton" src="links.png" />							
+			</div>
+			<div id="rightcontainer">
+				<img id="backtransparencyside" src="backtransparencyside.png" />
+				<img id="rhomebutton" src="rhome.png" />
+				<img id="rcontactbutton" src="rcontact.PNG" />
+				<img id="rlinksbutton" src="rlinks.png" />
+				<img id="scrollusb" src="scrollusbside.png" />
+			</div>
+			<div id="bottomcontainer">
+				<img id="backtransparency2" src="backtransparency.png" />
+				<img id="baboutbutton" src="babout.png" />
+				<img id="bhomebutton" src="bhome.png" />
+				<img id="blinksbutton" src="blinks.png" />
+				<img id="guitarcd" src="guitacdside.png" />
+			</div>
+			<div id="cornercontainer">
+				<img id="backtransparencyupside" src="backtransparencyupside.png" />
+				<img id="caboutbutton" src="cabout.png" />
+				<img id="ccontactbutton" src="ccontact.PNG" />
+				<img id="chomebutton" src="chome.png" />
+				<img id="bowcable" src="bowcables.png" />
+			</div>
+				
+				
+		</div>
+	</body>
+</html>

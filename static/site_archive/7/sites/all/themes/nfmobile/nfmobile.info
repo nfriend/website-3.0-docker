@@ -1,0 +1,14 @@
+name = Nathan Friend
+description = A custom theme that allows for any size viewport
+core = 7.x
+engine = phptemplate
+
+regions[content] = Content
+regions[sidebar] = Sidebar
+regions[footer] = Footer
+
+stylesheets[all][] = Styles/stylesheet.css
+scripts[] = Scripts/resize.js
+scripts[] = Scripts/init.js
+
+

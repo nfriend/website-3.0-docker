@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Nathan Friend</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="Friend" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/icon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css">
+		<link rel="stylesheet" type="text/css" href="template.css">
+		
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		
+		<script type="text/javascript">
+			google.load("jquery", "1");			
+		</script>
+		<script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script>
+		<script type="text/javascript">
+			$(init);
+			
+			function init() {				
+				$("#topLeftImg").hover(makeBigger, makeSmaller);
+				$("#topRightImg").hover(makeBigger, makeSmaller);
+				$("#bottomLeftImg").hover(makeBigger, makeSmaller);
+				$("#bottomRightImg").hover(makeBigger, makeSmaller);
+				initSlider1();
+				initSlider2();
+				initSlider3();
+				initSlider4();
+				
+				function makeBigger() {
+					$(this).animate ( {
+					"width": $("#slider-range-min2").slider("value") + "px"
+					}, $("#slider-range-min3").slider("value"))
+					
+					//$(this).clearQueue();
+				}
+				
+				function makeSmaller() {
+					$(this).animate ( {
+					"width": $("#slider-range-min1").slider("value") + "px"
+					}, $("#slider-range-min4").slider("value"))
+					
+					//$(this).clearQueue();
+				}
+			}
+			
+			function initSlider1() {
+				$( "#slider-range-min1" ).slider({
+					orientation: "vertical",
+					range: "min",
+					value: 150,
+					min: 20,
+					max: 300,
+					slide: function( event, ui ) {
+						//$( "#amount1" ).val( ui.value );
+					}
+				});
+				$("#slider-range-min1").height(400);
+				//$( "#amount1" ).val( $( "#slider-range-min1" ).slider( "value" ) );
+			};
+			
+			function initSlider2() {
+				$( "#slider-range-min2" ).slider({
+					orientation: "vertical",
+					range: "min",
+					value: 550,
+					min: 300,
+					max: 1000,
+					slide: function( event, ui ) {
+						//$( "#amount2" ).val( ui.value );
+					}
+				});
+				$("#slider-range-min2").height(400);
+				//$( "#amount2" ).val( $( "#slider-range-min2" ).slider( "value" ) );
+			};
+			
+			function initSlider3() {
+				$( "#slider-range-min3" ).slider({
+					orientation: "vertical",
+					range: "min",
+					value: 350,
+					min: 100,
+					max: 1000,
+					slide: function( event, ui ) {
+						//$( "#amount3" ).val( ui.value );
+					}
+				});
+				$("#slider-range-min3").height(400);
+				//$( "#amount3" ).val( $( "#slider-range-min3" ).slider( "value" ) );
+			};
+			
+			function initSlider4() {
+				$( "#slider-range-min4" ).slider({
+					orientation: "vertical",
+					range: "min",
+					value: 500,
+					min: 100,
+					max: 1000,
+					slide: function( event, ui ) {
+						//$( "#amount4" ).val( ui.value );
+					}
+				});
+				$("#slider-range-min4").height(400);
+				//$( "#amount4" ).val( $( "#slider-range-min4" ).slider( "value" ) );
+			};
+			
+			function slidein() {
+				$( "#titleimg").animate( {
+					"top": "0px"
+				}, 800);
+			}
+			
+						
+		</script>		
+		
+	</head>
+	<body onload="slidein()" onkeydown="catchpress(event); this.select()" onkeyup="catchrelease(event); this.select()">
+		
+		<div id="title" >
+			<img id="titleimg" src="title.PNG" width="400px"/>			
+		</div>
+		
+		<div id="container">
+			<div id="topLeft">
+				<a href="home.html"><img id="topLeftImg" src="home.PNG" width="150px;"/></a>
+			</div>
+			<div id="topRight">
+				<a href="about.html"><img id="topRightImg" src="about.PNG" width="150px;"/></a>
+			</div>
+			
+			<div id="clear"></div>
+			
+			<div id="bottomLeft">
+				<a href="links.html"><img id="bottomLeftImg" src="links.PNG" width="150px;"/></a>
+			</div>
+			<div id="bottomRight">
+				<a href="contact.html"><img id="bottomRightImg" src="contact.PNG" width="150px;"/></a>
+			</div>
+			
+			<div style="position: fixed; top: 20px; left: 20px; height: 100%; ">
+				<div id="slider-range-min1">
+					
+				</div>
+			</div>
+			
+			<div style="position: fixed; top: 20px; left: 50px;">
+				<div id="slider-range-min2">
+					
+				</div>
+			</div>
+			
+			<div style="position: fixed; top: 20px; left: 80px;">
+				<div id="slider-range-min3">
+					
+				</div>
+			</div>
+			
+			<div style="position: fixed; top: 20px; left: 110px;">
+				<div id="slider-range-min4">
+					
+				</div>
+			</div>
+			
+			<img style="position: fixed; top: 430px; left: 33px;" src="changeme.PNG" width="80px;"/>
+			
+			
+
+</div>			
+		</div>	
+	</body>
+</html>

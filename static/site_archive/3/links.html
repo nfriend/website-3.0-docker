@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>links</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="Friend" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link href='http://fonts.googleapis.com/css?family=Rosario:400,400italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css">
+		<link rel="stylesheet" type="text/css" href="template.css">
+		
+	</head>	
+	
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		
+		<script type="text/javascript">
+			google.load("jquery", "1");			
+		</script>
+		<script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script>
+		<script type="text/javascript">
+			$(init);
+			
+			function init() {
+				$("#topLeftImg").hover(makeBigger, makeSmaller);
+				$("#topRightImg").hover(makeBigger, makeSmaller);
+				$("#bottomLeftImg").hover(makeBigger, makeSmaller);
+				$("#bottomRightImg").hover(makeBigger, makeSmaller);
+				
+				makedialog();
+				$( "#overlay" ).dialog("close");
+			}
+			
+			function makeBigger() {
+					$(this).animate ( {
+					"width": "230px"
+					}, 200)
+					
+					//$(this).clearQueue();
+				}
+				
+				function makeSmaller() {
+					$(this).animate ( {
+					"width": "150px"
+					}, 200)
+					
+					//$(this).clearQueue();
+				}
+		</script>
+	
+	<script>
+			function makedialog() {
+				$( "#overlay" ).dialog({
+					modal: true,
+					width: 700,
+					height: 480,
+				});
+			}
+			
+			function catchpress(e){
+				var unicode=e.keyCode? e.keyCode : e.charCode
+				//alert(unicode);
+				if (unicode == 77) {
+					makedialog();
+				}
+			}
+			
+			function catchrelease(e){
+				var unicode=e.keyCode? e.keyCode : e.charCode
+				//alert(unicode);
+				$( "#overlay" ).dialog("close"); 
+			}
+			
+			function slidein() {
+				$( "#titleimg").animate( {
+					"top": "0px"
+				}, 800);
+				$( "#navigate").delay(300).animate( {
+					"top": "25px"
+				}, 1200);
+				$( "#linkstab").delay(500).animate( {
+					"top": "25px"
+				}, 1200);
+			}
+	</script>
+	
+	<body onload="slidein()" onkeydown="catchpress(event); this.select()" onkeyup="catchrelease(event); this.select()">
+		<div id="overlay" hidden="true">
+			<div id="topLeft">
+				<a href="home.html"><img id="topLeftImg" src="home.PNG" width="150px;"/></a>
+			</div>
+			<div id="topRight">
+				<a href="about.html"><img id="topRightImg" src="about.PNG" width="150px;"/></a>
+			</div>
+			
+			<div id="clear"></div>
+			
+			<div id="bottomLeft">
+				<a href="links.html"><img id="bottomLeftImg" src="links.PNG" width="150px;"/></a>
+			</div>
+			<div id="bottomRight">
+				<a href="contact.html"><img id="bottomRightImg" src="contact.PNG" width="150px;" style="border: 0px;"/></a>
+			</div>			
+		</div>
+		
+		<div id="title" >
+			<img id="navigate" src="navigate.PNG"/>
+			<img id="linkstab" class="tab" src="linkstab.PNG"/>
+			<img id="titleimg" src="title.PNG" width="400px"/>			
+		</div>
+		
+		<img id="line" src="line.PNG"/>
+		
+		<div id="content" width="706px;" align="center">
+			<p class="fonted big">Raindrops on roses and whiskers on kittens.</p>
+			<p class="fonted medium">These are a few of my favorite things:</p>
+			<div align="left">	
+				<hr/>
+				<a href="http://dordt.edu"><img src="dordtlogo.jpg" style="float: left; margin-right: 15px; margin-left: 10px;" width="70px"/></a>
+				<p class="fonted small" style="margin-bottom: 0px;">Dordt College</p>
+				<p class="fonted small" >An awesome college.  You should be going here.</p>
+				<hr/>
+				<a href="http://www.bestsemester.com/cmc/"><img src="cmclogo.gif" style="float: left; margin-right: 15px; margin-left: 10px; margin-top: 0px;" width="70px"/></a>
+				<p class="fonted small" style="margin-bottom: 0px;">The CMC</p>
+				<p class="fonted small" >My current home in Nashville.  You have to see it to believe it!</p>
+				<hr/>
+				<a href="http://ldraw.org"><img src="ldrawlogo.png" style="float: left; margin-right: 15px; margin-left: 10px; margin-top: 12px;" width="70px"/></a>
+				<p class="fonted small" style="margin-bottom: 0px;">LDRAW</p>
+				<p class="fonted small" >LEGO CAD software.  Also check out MLCAD, LGEO, and L3P.</p>
+				<hr/>
+				<a href="http://woot.com"><img src="wootlogo.png" style="float: left; margin-right: 15px; margin-left: 10px; margin-top: 0px;" width="70px"/></a>
+				<p class="fonted small" style="margin-bottom: 0px;">Woot!</p>
+				<p class="fonted small" >The best place to buy random stuff... and nerdy t-shirts.</p>
+				<hr/>
+				<a href="/site_archive/2/"><img src="nathanlogo.PNG" style="float: left; margin-right: 15px; margin-left: 10px; margin-top: 0px;" width="70px"/></a>
+				<p class="fonted small" style="margin-bottom: 0px;">My Old Site</p>
+				<p class="fonted small" >My previous attempt at a personal website.</p>
+				<hr/>
+			</div>			
+		</div>
+		
+		<img id="bottomline" src="line.PNG"/>
+		
+	</body>
+</html>

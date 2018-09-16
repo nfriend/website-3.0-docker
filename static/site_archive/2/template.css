@@ -1,0 +1,173 @@
+body {
+	margin: 0px;
+	overflow: hidden;
+}
+
+h5 {
+	margin: 20px; 
+	font-family: "DistThin", "DistThinIE"; 
+	font-size: 48px;
+		
+}
+
+
+h2 {
+	margin: 20px;
+	font-family: "DistThin", "DistThinIE"; 
+	font-size: 48px;
+}
+
+h3 {
+	margin: 20px;
+	font-family: "DistThin", "DistThinIE"; 
+	font-size: 30px;
+}
+
+h4 {
+	font-family: "DistThin", "DistThinIE"; 
+	font-size: 25px;
+}
+
+#content {
+	margin: 0px;
+	position: absolute;
+	top: 170px;
+	margin-left: 250px;
+	width: 40%;	
+	height: 100%;
+	border-style: groove;
+	border-radius: 15px;
+	opacity: 1.0;
+	
+	
+}
+
+#layer {
+	position: absolute;
+	margin: 0px;
+	opacity: .5;
+	width: 100%;	
+	top: 0px;
+	background-color: white;
+	height: 100%;
+	border-radius: 15px;
+}
+
+#innercontent {
+	position: absolute;
+	left: 10%;
+	opacity: 1;
+	width: 80%;
+	height: 100%;
+	font-family: "DistThin", "DistThinIE"; 
+	font-size: 48px;
+	top: 0px;	
+	border-radius: 15px;
+}
+
+#accordion {
+	font-family: "DistThin", "DistThinIE"; 
+	font-size: 15px;
+}
+
+.button {
+	position: relative;
+	top: 50%;
+	margin-bottom: -11px;
+	margin-left: 10px;
+}
+
+#menucontainer {
+	position: absolute;
+	top: 20%;
+	width: 300px;
+	left: -280px;
+}
+
+@font-face 
+{
+	font-family: DistThinIE;
+	src: url("DistThin.eot");
+}
+
+@font-face 
+{
+	font-family: DistThin;
+	src: url("DistThin.ttf");
+}
+
+.enterimage {
+	position: absolute;
+	right: 20px;
+	top: 62%
+	
+}
+
+#container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	min-width: 580px;
+}
+
+#mainleftdiv {
+	position: relative;
+	float: left;
+	width: 38%;
+	height: 100%;
+	margin: 0px;
+}
+
+#mainrightdiv {
+	position: relative;
+	float: right;
+	background-color: #FD9203;
+	width: 62%;
+	height: 100%;
+	margin: 0px;	
+}
+
+.clear {
+	clear: both;
+}
+
+#templateleftdiv {
+	position: fixed;
+	left: 100%;
+	height: 100%;
+	margin: 0px;
+	width: 304px;
+	top: 0px;
+}
+
+#templaterightdiv {
+	position: fixed;
+	left: 100%;
+	background-color: #FD9203;
+	height: 100%;
+	margin: 0px;
+	width: 152px;
+	top: 0px;	
+}
+
+#title {
+	position: fixed;
+	margin: 0px;
+	font-family: "DistThin", "DistThinIE"; 
+	font-size: 150px;
+	color: #350791;
+	top: -345px;
+	left: -20px;
+	opacity: 0.0;
+}
+
+#buttoncontainer {
+	position: absolute;
+	background-color: white;
+	left: 5%;
+	border: groove;
+	border-radius: 15px;
+	bottom: -100px;
+	height: 84px;	
+}

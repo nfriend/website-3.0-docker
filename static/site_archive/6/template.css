@@ -1,0 +1,130 @@
+@font-face 
+{
+	font-family: vectoraie;
+	src: url("Vectora.eot");
+}
+
+@font-face 
+{
+	font-family: vectora;
+	src: url("Vectora.otf");
+}
+
+body {
+	background-color: #d5d5d5;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+}
+
+#container {
+	position: absolute;
+	left: 50%;
+	margin-left: -475px;
+	width: 950px;
+	height: 100%;	
+}
+
+#backgroundimg {
+	width: 100%;
+}
+
+#background {
+	position: absolute;
+	top: 0px;
+}
+
+#homebackgroundimg {
+	position: absolute;
+	top: 0px; 
+	left: 10px;
+}
+
+#contactbackgroundimg {
+	position: absolute;
+	top: 0px; 
+	left: 175px;
+}
+
+#menus {
+	position: absolute;
+	top: 0px;
+}
+
+#homeclick {
+	position: absolute;
+	height: 40px;
+	width: 154px;
+	left: 16px;
+	z-index: 100;
+	background-image: url('workaround.png');
+	background-repeat: repeat;
+	cursor: pointer;
+}
+
+#contactclick {
+	position: absolute;
+	height: 40px;
+	width: 154px;
+	left: 177px;	
+	z-index: 101;
+	background-image: url('workaround.png');
+	background-repeat: repeat;
+	cursor: pointer;
+}
+
+#contentcontainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 100px;
+}
+
+#content {	
+	width: 475px;
+	float: left;
+}
+
+
+#picture {
+	width: 475px;
+	float: right;
+	margin-top: -410px;
+	background-color: red;
+}
+
+#pictureimg {
+	position: absolute;	
+	right: 0px;
+}
+
+#preload {
+	display: none;
+}
+
+h1 {
+	font-family: 'vectora', 'vectoraie';
+	font-size: 4.0em;
+}
+
+h2 {
+	font-family: 'vectora', 'vectoraie';
+	font-size: 2.0em;
+	padding: 0px;
+	margin: 0px;
+	color: #C0C0C0;
+}
+
+h3 {
+	font-family: 'vectora', 'vectoraie';
+	font-size: 2.7em;
+}
+
+p {
+	font-family: 'vectora', 'vectoraie';
+	font-size: 1.5em;
+}
+
+.cleared {
+	clear: both;
+}

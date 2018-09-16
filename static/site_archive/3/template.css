@@ -1,0 +1,162 @@
+
+.fonted {
+	font-family: 'Rosario', sans-serif;
+}
+
+.big {
+	font-size: 2.0em;
+	margin: 0px;
+	padding: 0px;
+}
+
+.medium {
+	font-size: 1.5em;
+}
+
+.small {
+	font-size: 1.0em;
+}
+
+.verysmall {
+	font-size: 0.8em;
+}
+
+img {
+	border: 0;
+}
+
+#container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;	
+}
+
+#topLeft {	
+	position: relative;
+	width: 50%;
+	height: 50%;
+	float: left;	
+}
+
+#topRight {
+	position: relative;
+	width: 50%;
+	height: 50%;
+	float: left;	
+}
+
+#bottomLeft {
+	position: relative;
+	width: 50%;
+	height: 50%;
+	float: left;
+	
+}
+
+#bottomRight {
+	position: relative;
+	width: 50%;
+	height: 50%;
+	float: left;
+	border: none;
+	
+}
+
+#clear {
+	clear: both;
+}
+
+#topLeftImg {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	border: none;
+	margin: 0px;
+}
+
+#topRightImg {
+	position: absolute;
+	bottom: 0px;
+	border: none;
+	margin: 0px;
+	
+}
+
+#bottomLeftImg {
+	float: right;
+	border: none;
+	margin: 0px;
+}
+
+#bottomRightImg {
+	border: none;
+	margin: 0px;
+}
+
+#demo-frame > div.demo { 
+	padding: 10px;	 
+}
+
+.ui-dialog-titlebar { 
+	display: none; 
+}
+
+#title{
+	margin: 0px;
+	border: none;
+}
+
+#titleimg {
+	position: absolute;
+	left: 50%;
+	margin: 0px;
+	border: none;
+	margin-left: -200px;
+	top: -100px;	
+}
+
+#navigate {
+	position: absolute;
+	left: 50%;
+	margin: 0px;
+	border: none;
+	margin-left: -60px;
+	top: -120px;	
+}
+
+.tab {
+	position: absolute;
+	left: 50%;
+	margin: 0px;
+	border: none;
+	margin-left: -168px;
+	top: -120px;	
+}
+
+#line {
+	position: absolute;
+	left: 50%;
+	margin-left: -353px;
+	top: 155px;
+}
+
+#bottomline {
+	position: absolute;
+	left: 50%;
+	margin-left: -353px;
+	top: 637px;
+}
+
+#content {
+	position: absolute;
+	left: 50%;
+	width: 650px;
+	height: 400px;
+	margin-left: -345px;
+	top: 180px;
+	overflow: auto;
+	padding: 20px;
+}

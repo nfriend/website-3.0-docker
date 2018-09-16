@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>Nathan Friend</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="Friend" />		
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<meta name="google-site-verification" content="bpW9NfqHH7u2UngEdncvAGX-aTU_4k-8ORxjliF6YmE" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+				
+		<link rel="stylesheet" type="text/css" href="template.css">       
+        
+        <script type="text/javascript">
+        	        	
+        	var height = 0,
+        	screenHeight = 0,
+        	currentPage = 1,
+        	originalHeight = 0;
+        	
+        	function init() {
+        		screenHeight = screen.availHeight;
+        		mainDiv = document.getElementById("mainDiv");
+        		div1 = document.getElementById("div1");
+        		div2 = document.getElementById("div2");
+        		div3 = document.getElementById("div3");
+        		mainDiv.style.height = (screenHeight * 2) + "px";
+        		div1.style.height = screenHeight + "px";
+        		div2.style.height = screenHeight + "px";
+        		div3.style.height = screenHeight + "px";
+        		if (screen.availWidth > 1024 && screen.availWidth < 1440) {
+        			leftBorder = document.getElementById("leftBorder");
+        			rightBorder = document.getElementById("rightBorder");
+        			leftBorder.style.marginLeft = "-880px"
+        			rightBorder.style.marginRight = "-853px"
+        		}        		
+        	}
+        	
+        	        	
+        	function changePicture() 
+        	{        		
+        		enterPicture = document.getElementById("enterPicture");
+        		enterPicture.src = "enter2.jpg";
+        		
+        	}
+        	
+        	function changePictureBack()
+        	{
+        		enterPicture = document.getElementById("enterPicture");        		
+        		enterPicture.src = "enter.jpg";   		
+        	}
+        	
+        	function scrollDown(pages)
+        	{
+        		if (height > (originalHeight - screenHeight * pages)) {
+        			height += -20;        			
+        			mainDiv = document.getElementById("mainDiv");
+        			mainDiv.style.top = height + "px";
+        			setTimeout("scrollDown(" + pages + ")", 5);
+        		} else originalHeight = height;   		
+        	}
+        	
+        	function scrollUp(pages)
+        	{
+        		if (height < (originalHeight + screenHeight * pages)) {
+        			height += 20;        			
+        			mainDiv = document.getElementById("mainDiv");
+        			mainDiv.style.top = height + "px";
+        			setTimeout("scrollUp(" + pages + ")", 5);
+        		} else originalHeight = height;   		
+        	}
+        	
+        	       	
+        	function homeHover(number)
+        	{
+        		home = document.getElementById("home" + number);
+        		home.src = "home.jpg";        		
+        	} 
+        	
+        	function newsHover(number)
+        	{
+        		news = document.getElementById("news" + number);
+        		news.src = "news.jpg";        		
+        	} 
+        	
+        	function linksHover(number)
+        	{
+        		links = document.getElementById("links" + number);
+        		links.src = "links.jpg";        		
+        	} 
+        	
+        	function unHomeHover(number)
+        	{
+        		home = document.getElementById("home" + number);
+        		home.src = "homerotated.jpg";        		
+        	} 
+        	
+        	function unnewsHover(number)
+        	{
+        		news = document.getElementById("news" + number);
+        		news.src = "newsrotated.jpg";        		
+        	} 
+        	
+        	function unLinksHover(number)
+        	{
+        		links = document.getElementById("links" + number);
+        		links.src = "linksrotated.jpg";        		
+        	} 
+        	
+        	function bulletHover(idName, fileName)
+        	{
+        		bullet = document.getElementById(idName);
+        		bullet.src = "bullets/" + fileName;
+        	}
+        	
+        	function followLink(sitename)
+        	{
+        		switch(sitename) 
+        		{
+        			case 'mlcad':
+        				window.location = "http://mlcad.lm-software.com/e_default.htm";
+        				break;
+        			case 'l3p':
+        				window.location = "http://www.hassings.dk/l3/l3p.html";
+        				break;
+        			case 'l3pao':
+        				window.location = "http://l3pao.malagraphixia.com/";
+        				break;
+        			case 'ldraw':
+        				window.location = "http://www.ldraw.org/";
+        				break;
+        			case 'lgeo':
+        				window.location = "http://www.digitalbricks.org/lgeo.html";
+        				break;
+        			case 'povray':
+        				window.location = "http://www.povray.org/";
+        				break;
+        			case 'dordt':
+        				window.location = "http://www.dordt.edu/";
+        				break;
+        		}
+        		
+        	}
+        	
+        	// Changes the cursor to an hourglass
+			function cursor_link() {				
+				document.body.style.cursor = 'pointer';
+			}
+
+			// Returns the cursor to the default pointer
+			function cursor_clear() {
+				document.body.style.cursor = 'default';
+			}
+			
+			function changeKing(file) {
+				document.getElementById('king').src = file;
+			}
+        	
+        	
+        	
+        	
+        	        	
+        </script>
+    </head>
+    <body onload = "init()" >
+    	<div id = "mainDiv">
+	    	<div id = "div1">
+	        	<img id = "enterPicture" src = "enter.jpg" onmouseover="changePicture()" onmouseout="changePictureBack()" border = "0" onclick="scrollDown(1);"/>
+	        </div>
+	        <div id = "div2">	        	
+	        	<img id = "home1" class = "home" src = "homerotated.jpg" width = "250px" border = "0" onmouseover="homeHover(1); cursor_link();" onmouseout="setTimeout('unHomeHover(1)', 100); cursor_clear();"/>
+	        	<img id = "news1" class = "news" src = "newsrotated.jpg" width = "250px" border = "0" onclick="scrollDown(1);" onmouseover="newsHover(1); cursor_link();" onmouseout="setTimeout('unnewsHover(1)', 100); cursor_clear();"/>
+	        	<img id = "links1" class = "links" src = "linksrotated.jpg" width = "250px" border = "0" onclick="scrollDown(2);" onmouseover="linksHover(1); cursor_link();" onmouseout="setTimeout('unLinksHover(1)', 100); cursor_clear();"/>
+	        	<img id = "king" width = "350px" style = "position: absolute; margin-left: -600px; margin-top: 200px;" src = "king.jpg" onmouseover = "changeKing('king2.jpg')" onmouseout = "changeKing('king.jpg')"/>
+	        	<div style = "position: absolute; margin-top: 80px; margin-left: 400px; width: 500px; height: 450px;">
+	        		<h2 style = 'margin-bottom: 0px; font-family: "nathanshand", "nathanshandie"; font-size: 4.0em'>Welcome to my site!</h2>
+	        		<h2 style = 'margin: 0px; font-family: "nathanshand", "nathanshandie"; font-size: 2.5em'>I hope you enjoy your stay.</h2>	
+	        		<hr/>
+	        		<h3 style = 'margin: 5px; font-family: "nathanshand", "nathanshandie"; font-size: 2.0em'>A little bit about me:  I'm a Computer Science major at Dordt College.
+	        			In my spare time I like to play ultimate frisbee, record music, teach myself new programming languages,
+	        			and animate things on my website.<br></br>Oh yeah, I also kind of like LEGOs.
+	        		</h3>
+	        	</div>	        	
+	        </div>
+	        <div id = "div3">
+	        	<img id = "home0" class = "home" src = "homerotated.jpg" width = "250px" border = "0" onclick="scrollUp(1);" onmouseover="homeHover(0); cursor_link();" onmouseout="setTimeout('unHomeHover(0)', 100); cursor_clear();"/>
+	        	<img id = "news0" class = "news" src = "newsrotated.jpg" width = "250px" border = "0" onmouseover="newsHover(0); cursor_link();" onmouseout="setTimeout('unnewsHover(0)', 100); cursor_clear();"/>
+	        	<img id = "links0" class = "links" src = "linksrotated.jpg" width = "250px" border = "0" onclick="scrollDown(1);" onmouseover="linksHover(0); cursor_link();" onmouseout="setTimeout('unLinksHover(0)', 100); cursor_clear();"/>
+	        	<iframe src="innerhome.html" width = "1000px" height = "400px" style = "position: relative; top: 100px; border: double;"></iframe>	        	
+	        </div>
+	        <div id = "div4">
+	        	<img id = "home2" class = "home" src = "homerotated.jpg" width = "250px" border = "0" onclick="scrollUp(2);" onmouseover="homeHover(2); cursor_link();" onmouseout="setTimeout('unHomeHover(2)', 100); cursor_clear();"/>
+	        	<img id = "news2" class = "news" src = "newsrotated.jpg" width = "250px" border = "0" onclick="scrollUp(1);" onmouseover="newsHover(2); cursor_link();" onmouseout="setTimeout('unnewsHover(2)', 100); cursor_clear();"/>
+	        	<img id = "links2" class = "links" src = "linksrotated.jpg" width = "250px" border = "0" onmouseover="linksHover(2); cursor_link();" onmouseout="setTimeout('unLinksHover(2)', 100); cursor_clear();"/>
+	        	<img id = "black" class = "leftbullet upperbullet" src = "bullets/blackunclicked.jpg" onmouseover = "bulletHover('black', 'black.jpg'); cursor_link();" onmouseout = "bulletHover('black', 'blackunclicked.jpg'); cursor_clear();"  onclick = "followLink('mlcad')"/>
+	        	<img id = "blue" class = "centerbullet upperbullet" src = "bullets/blueunclicked.jpg" onmouseover = "bulletHover('blue', 'blue.jpg'); cursor_link();" onmouseout = "bulletHover('blue', 'blueunclicked.jpg'); cursor_clear();"  onclick = "followLink('l3p')"/>
+	        	<img id = "brown" class = "rightbullet upperbullet" src = "bullets/brownunclicked.jpg" onmouseover = "bullethttp://127.0.0.1:8020/MySite/news.jpgHover('brown', 'brown.jpg'); cursor_link();" onmouseout = "bulletHover('brown', 'brownunclicked.jpg'); cursor_clear();"  onclick = "followLink('l3pao')"/>
+	        	<img id = "green" class = "leftbullet middlebullet" src = "bullets/greenunclicked.jpg" onmouseover = "bulletHover('green', 'green.jpg'); cursor_link();" onmouseout = "bulletHover('green', 'greenunclicked.jpg'); cursor_clear();"  onclick = "followLink('ldraw')"/>
+	        	<img id = "red" class = "centerbullet middlebullet" src = "bullets/redunclicked.jpg" onmouseover = "bulletHover('red', 'red.jpg'); cursor_link();" onmouseout = "bulletHover('red', 'redunclicked.jpg'); cursor_clear();"  onclick = "followLink('lgeo')"/>
+	        	<img id = "white" class = "rightbullet middlebullet" src = "bullets/whiteunclicked.jpg" onmouseover = "bulletHover('white', 'white.jpg'); cursor_link();" onmouseout = "bulletHover('white', 'whiteunclicked.jpg'); cursor_clear();"  onclick = "followLink('povray')"/>
+	        	<img id = "yellow" class = "centerbullet lowerbullet" src = "bullets/blackyellowunclicked.jpg" onmouseover = "bulletHover('yellow', 'blackyellow.jpg'); cursor_link();" onmouseout = "bulletHover('yellow', 'blackyellowunclicked.jpg'); cursor_clear();"  onclick = "followLink('dordt')"/>
+	        	
+	        	<img id = "blacklink" class = "leftlink upperbullet" src = "mlcad.JPG" onmouseover = "bulletHover('black', 'black.jpg'); cursor_link();" onmouseout = "bulletHover('black', 'blackunclicked.jpg'); cursor_clear();" onclick = "followLink('mlcad')"/>
+	        	<img id = "bluelink" class = "centerlink upperbullet" src = "l3p.JPG" onmouseover = "bulletHover('blue', 'blue.jpg'); cursor_link();" onmouseout = "bulletHover('blue', 'blueunclicked.jpg'); cursor_clear();" onclick = "followLink('l3p')"/>
+	        	<img id = "brownlink" class = "rightlink upperbullet" src = "l3pao.JPG" onmouseover = "bulletHover('brown', 'brown.jpg'); cursor_link();" onmouseout = "bulletHover('brown', 'brownunclicked.jpg'); cursor_clear();" onclick = "followLink('l3pao')"/>
+	        	<img id = "greenlink" class = "leftlink middlebullet" src = "ldraw.JPG" onmouseover = "bulletHover('green', 'green.jpg'); cursor_link();" onmouseout = "bulletHover('green', 'greenunclicked.jpg'); cursor_clear();" onclick = "followLink('ldraw')"/>
+	        	<img id = "redlink" class = "centerlink middlebullet" src = "lgeo.JPG" onmouseover = "bulletHover('red', 'red.jpg'); cursor_link();" onmouseout = "bulletHover('red', 'redunclicked.jpg'); cursor_clear();" onclick = "followLink('lgeo')"/>
+	        	<img id = "whitelink" class = "rightlink middlebullet" src = "povray.JPG" onmouseover = "bulletHover('white', 'white.jpg'); cursor_link();" onmouseout = "bulletHover('white', 'whiteunclicked.jpg'); cursor_clear();" onclick = "followLink('povray')"/>
+	        	<img id = "yellowlink" class = "centerlink lowerbullet" src = "dordt.JPG" onmouseover = "bulletHover('yellow', 'blackyellow.jpg'); cursor_link();" onmouseout = "bulletHover('yellow', 'blackyellowunclicked.jpg'); cursor_clear();" onclick = "followLink('dordt')"/>
+	       		
+	       		<h5 class = "leftlink" style = "font-family:'Helvetica',Georgia,Serif; margin-top: 190px; width: 180px; cursor: hand;" onmouseover = "cursor_link();" onmouseout = "cursor_clear();" onclick = "followLink('mlcad')">Used to build the virtual models seen on this website.</h5>
+	       		<h5 class = "centerlink" style = "font-family:'Helvetica',Georgia,Serif; margin-top: 190px; width: 180px;" onmouseover = "cursor_link();" onmouseout = "cursor_clear();" onclick = "followLink('l3p')">Generates the POV-Ray code to raytrace the MLCad models.</h5>
+	       		<h5 class = "rightlink" style = "font-family:'Helvetica',Georgia,Serif; margin-top: 190px; width: 180px;" onmouseover = "cursor_link();" onmouseout = "cursor_clear();" onclick = "followLink('l3pao')">A GUI for L3P.</h5>
+	       		<h5 class = "leftlink" style = "font-family:'Helvetica',Georgia,Serif; margin-top: 340px; width: 180px;" onmouseover = "cursor_link();" onmouseout = "cursor_clear();" onclick = "followLink('ldraw')">The creators of the MLCad parts libraries.</h5>
+	       		<h5 class = "centerlink" style = "font-family:'Helvetica',Georgia,Serif; margin-top: 340px; width: 180px;" onmouseover = "cursor_link();" onmouseout = "cursor_clear();" onclick = "followLink('lgeo')">A LEGO POV-Ray library that makes everything look oh-so-good.</h5>
+	       		<h5 class = "rightlink" style = "font-family:'Helvetica',Georgia,Serif; margin-top: 345px; width: 180px;" onmouseover = "cursor_link();" onmouseout = "cursor_clear();" onclick = "followLink('povray')">Free, open-source raytracer.</h5>
+	       		<h5 class = "centerlink" style = "font-family:'Helvetica',Georgia,Serif; margin-top: 490px; width: 180px;" onmouseover = "cursor_link();" onmouseout = "cursor_clear();" onclick = "followLink('dordt')">An awesome college.  You should be going here.</h5>	
+	       			
+	        </div>                          
+	    </div>	    	
+	    
+	    <img id="leftBorder" src = "leftborder.jpg" />
+	    <img id="rightBorder" src = "rightborder.jpg" />
+    </body>
+</html>

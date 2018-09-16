@@ -1,0 +1,174 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+}
+
+#container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#center {
+	position: absolute;
+	width: 100%;
+	min-width: 1000px;
+	min-height: 500px;
+	height: 100%;
+	left: -0%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#left {
+	position: absolute;
+	width: 100%;
+	min-width: 1000px;
+	min-height: 500px;
+	height: 100%;
+	left: -100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#right {
+	position: absolute;
+	width: 100%;
+	min-width: 1000px;
+	min-height: 500px;
+	height: 100%;
+	left: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#cellokeyboard {
+	position: absolute;
+	right: 140px;
+	top: -350px;
+	height: 160%;
+	max-height: 1706px;
+}
+
+#guitarcd {
+	position: absolute;
+	right: 140px;
+	top: -450px;
+	height: 170%;
+	max-height: 1786px;
+}
+
+#scrollusb {
+	position: absolute;
+	right: 250px;
+	top: 30px;
+	height: 80%;
+	max-height: 1354px;
+}
+
+#wallpaper {
+	position: absolute;
+	left: 0px;
+	top: 0%;
+	width: 400px;
+	height: 100%;
+	background-image: url(blue_wallpaper.png);
+	background-repeat: repeat;
+}
+
+#gradientstripes {
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	height: 100%;
+}
+
+#gradientstripesreversed {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+}
+
+#signature {
+	position: absolute;
+	left: 80px;
+	top: 150px;
+}
+
+#blackgradientflipped {
+	position: absolute;
+	left: 60px;
+	top: 130px;
+	width: 800px;
+	height: 280px;
+}
+
+#centerabout {
+	position: absolute;
+	bottom: 10px;
+	left: 0px;
+}
+
+#centercontact {
+	position: absolute;
+	bottom: 10px;
+	left: 310px;
+}
+
+#lefthome {
+	position: absolute;
+	bottom: 70px;
+	left: 10px;
+}
+
+#leftcontact {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+
+#rightabout {
+	position: absolute;
+	bottom: 10px;
+	left: 0px;
+}
+
+#righthome {
+	position: absolute;
+	bottom: 70px;
+	left: 0px;
+}
+
+#background {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+}
+
+#transback {
+	position: absolute;
+	left: 60px;
+	top: 130px;
+	width: 500px;
+	height: 400px;
+}
+
+#transbackgradient {
+	position: absolute;
+	left: 560px;
+	top: 130px;
+	width: 350px;
+	height: 400px;
+}
+
+#changebutton {
+	position: fixed;
+	top: 0%;
+	left: 60px;
+	width: 350px;
+}

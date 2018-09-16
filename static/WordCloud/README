@@ -1,0 +1,41 @@
+JsTagSphere project (from http://jstagsphere.sf.net)
+
+It is recommended to download package with latest revision in the archive file name.
+
+Inside a package you will find:
+- cloud.js - library itself;
+- cloud-min.js - minified library version;
+- test.html - usage example;
+- LICENSE.txt - Gnu Public License text;
+- README - this file.
+
+There could be newest revisions in the source code repository, but they may appear some
+auxiliary revisions and you are not recommended to use them.
+
+
+==========================
+Important changes history:
+
+Rev19 (2012-03-13)
+    - Insensitivity zone added.
+
+Rev18 (2012-03-13)
+    - Scaling parameters added.
+
+Rev11-16 (2012-02-20...2012-02-26)
+    - Transparency and z-order added.
+
+Rev10 (2012-02-20)
+    - Parametrization added.
+
+Rev8 (2012-02-16)
+    - Searching for closest tag (for clicking).
+
+Rev7 (2012-02-15)
+    - Rendering speed improvement.
+
+Rev3-5 (2012-02-15)
+    - Main functionality introduced.
+
+Rev2 (2012-02-15)
+    - Prototype created.

@@ -1,0 +1,53 @@
+Array
+(
+    [HTTP_HOST] => nathanfriend.com
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.56 Safari/536.5
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_ENCODING] => gzip,deflate,sdch
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.8
+    [HTTP_ACCEPT_CHARSET] => ISO-8859-1,utf-8;q=0.7,*;q=0.3
+    [HTTP_CLIENT_IP] => 65.101.171.31
+    [HTTP_X_FORWARDED_FOR] => 65.101.171.31
+    [HTTP_VIA] => http/1.1 web1.byetcluster.com[D1BE554A] (ApacheTrafficServer/3.0.4 [uScM])
+    [REMOTE_ADDR] => 65.101.171.31
+    [REQUEST_TIME] => 13-06-2012 05:02
+)
+Array
+(
+    [HTTP_HOST] => nathanfriend.com
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Linux; U; Android 4.0.2; en-us; Galaxy Nexus Build/ICL53F) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30
+    [HTTP_ACCEPT_ENCODING] => gzip,deflate
+    [HTTP_ACCEPT_LANGUAGE] => en-US
+    [HTTP_ACCEPT_CHARSET] => utf-8, iso-8859-1, utf-16, *;q=0.7
+    [HTTP_CLIENT_IP] => 65.101.171.31
+    [HTTP_X_FORWARDED_FOR] => 65.101.171.31
+    [HTTP_VIA] => http/1.1 web1.byetcluster.com[D1BE554A] (ApacheTrafficServer/3.0.4 [uScM])
+    [REMOTE_ADDR] => 65.101.171.31
+    [REQUEST_TIME] => 13-06-2012 05:05
+)
+Array
+(
+    [HTTP_USER_AGENT] => Mozilla/5.0 (compatible; YesupBot/1.0; +http://www.yesup.net/bot.html)
+    [HTTP_HOST] => nathanfriend.com
+    [HTTP_ACCEPT] => */*
+    [HTTP_CLIENT_IP] => 199.21.148.46
+    [HTTP_X_FORWARDED_FOR] => 199.21.148.46
+    [HTTP_VIA] => http/1.1 web1.byetcluster.com[D1BE554A] (ApacheTrafficServer/3.0.4 [uScM])
+    [REMOTE_ADDR] => 199.21.148.46
+    [REQUEST_TIME] => 13-06-2012 05:05
+)
+Array
+(
+    [HTTP_HOST] => nathanfriend.com
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.56 Safari/536.5
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_ENCODING] => gzip,deflate,sdch
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.8
+    [HTTP_ACCEPT_CHARSET] => ISO-8859-1,utf-8;q=0.7,*;q=0.3
+    [HTTP_CLIENT_IP] => 65.101.171.31
+    [HTTP_X_FORWARDED_FOR] => 65.101.171.31
+    [HTTP_VIA] => http/1.1 web1.byetcluster.com[D1BE554A] (ApacheTrafficServer/3.0.4 [uScM])
+    [REMOTE_ADDR] => 65.101.171.31
+    [REQUEST_TIME] => 13-06-2012 05:06
+)

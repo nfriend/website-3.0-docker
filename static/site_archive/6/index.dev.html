@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Nathan Friend: Home</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="Friend" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		
+		<link rel="stylesheet" type="text/css" href="template.css">
+		
+		<link href='http://fonts.googleapis.com/css?family=Cabin+Condensed' rel='stylesheet' type='text/css'>
+		
+	</head>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+	<script src="jqueryhashchange.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+	
+		function movepic(img_name, img_src) {
+			document.getElementById(img_name).src = img_src
+		}
+		
+		function redirect() {
+			window.location = "contact.html";
+		}
+		
+	</script>
+	
+	<script type="text/javascript">
+    $(function()
+        {
+        // Bind an event to window.onhashchange that, when the hash changes, gets the
+        // hash and adds the class "selected" to any matching nav link.
+        $(window).hashchange(function()
+            {
+            var hash = location.hash;
+            
+            // Set the page title based on the hash.
+            document.title = 'Nathan Friend:' | + ( hash.replace( /^#/, '' ) || 'blank' );            
+
+            // Hide all content divs
+            $("#text_body > div").hide();            
+
+            if(hash === "" || hash=== "#home")
+                // no hash was selected; show the index div (this may be the first page the user hit)
+                {$('#home').show();}
+            else
+                // Show the requested div since a hash was selected
+                {$(hash).show();}            
+
+            // Iterate over all nav links, setting the "selected" class as-appropriate.
+            $('a.ahash').each(function()
+                {
+                var that = $(this);
+                that[ that.attr( 'href' ) === hash ? 'addClass' : 'removeClass' ]( 'selected' );
+                });
+            })        
+
+        // Since the event is only triggered when the hash changes, we need to trigger
+        // the event now, to handle the hash the page may have loaded with.
+        $(window).hashchange();        
+
+        });
+    </script>
+
+	
+	<body>
+		<div id="text_body">		
+			<div id="home">
+				<div id="homeclick" onmouseover="movepic('homebackgroundimg', 'homebackground2.png')" onmouseout="movepic('homebackgroundimg', 'homebackground.png')"></div>
+				<div id="contactclick" onclick="redirect()"  onmouseover="movepic('contactbackgroundimg', 'contactbackground2.png')" onmouseout="movepic('contactbackgroundimg', 'contactbackground.png')"></div>
+			
+				<div id="background">
+					<img id="backgroundimg" src="cellobackground2.jpg" />
+					<img id="homebackgroundimg" src="homebackground.png"/>	
+					<a href="#contact" class="ahash"><img style="border-style: none;" id="contactbackgroundimg" src="contactbackground.png" /></a>
+				</div>
+				<div id="menus">
+					<p style="position: absolute; top: 2px; left: 53px; color: #E0E0E0; font-size: 32px; padding: 0px; margin: 0px;">home</p>
+					<p style="position: absolute; top: 2px; left: 200px; color: #E0E0E0; font-size: 32px; padding: 0px; margin: 0px;">contact</p>
+				</div>
+				<div id="contentcontainer">
+					<div id="content">				
+						<p style="font-size: 2.7em; margin-bottom: 5px;">Welcome.</p>
+						<hr>
+						<p style="margin-top: 40px;">Thanks for stopping by.  My name's Nathan Friend and I do web programming and play the cello.</p>
+						<p>I'm currently a Junior at Dordt College, studying Computer Science and Music Performance.</p>
+					</div>				
+					<div class="cleared"></div>
+				</div>
+				<div id="preload">
+					<img src="contactbackground2.png" />
+					<img src="homebackground2.png" />
+				</div>
+			</div>
+			<div id="contact">
+				<div id="homeclick" onclick="redirect()" onmouseover="movepic('homebackgroundimg', 'homebackground2.png')" onmouseout="movepic('homebackgroundimg', 'homebackground.png')"></div>
+				<div id="contactclick"  onmouseover="movepic('contactbackgroundimg', 'contactbackground2.png')" onmouseout="movepic('contactbackgroundimg', 'contactbackground.png')"></div>
+			
+				<div id="background">
+					<img id="backgroundimg" src="scrollbackground.jpg" />
+					<a href="#home" class="ahash"><img style="border-style: none;" id="homebackgroundimg" src="homebackground.png"/></a>	
+					<img id="contactbackgroundimg" src="contactbackground.png" />
+				</div>
+				<div id="menus">
+					<p style="position: absolute; top: 2px; left: 53px; color: #E0E0E0; font-size: 32px; padding: 0px; margin: 0px;">home</p>
+					<p style="position: absolute; top: 2px; left: 200px; color: #E0E0E0; font-size: 32px; padding: 0px; margin: 0px;">contact</p>
+				</div>
+				<div id="contentcontainer">
+					<div id="content">				
+						<p style="font-size: 2.7em; margin-bottom: 5px;">I'd love to chat.</p>
+						<hr>
+						<p style="margin-top: 40px;">Here are a few ways to get in touch with me:</p>
+						<a href="http://www.facebook.com/nathan.friend" ><img style="border-style: none;" src="facebook.png"/></a>
+						<a href="http://www.twitter.com/NathanAFriend"><img style="border-style: none;" src="twitter.png"/></a>
+						<a href="http://www.linkedin.com/in/nfriend"><img style="border-style: none;" src="linkedin.png"/></a>
+						<p style="margin-bottom: 0px;">Or, if you prefer email -</p>					
+						<p style="margin-top: 10px; font-size: 2.0em"><a href="mailto:nathan.a.friend@gmail.com" style="color: black; text-decoration: none;">nathan.a.friend@gmail.com</a></p>			
+					</div>				
+					<div class="cleared"></div>
+				</div>
+				<div id="preload">
+					<img src="contactbackground2.png" />
+					<img src="homebackground2.png" />
+				</div>
+			</div>
+		</div>
+	</body>
+	
+</html>
