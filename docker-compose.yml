@@ -21,6 +21,9 @@ services:
             - ./node_modules/@nathanfriend/origins-host:/etc/nginx/html/origins
             - ./node_modules/@nathanfriend/webgl-chess:/etc/nginx/html/webgl-chess
             - ./node_modules/@nathanfriend/nfjs-demo:/etc/nginx/html/nfjs
+            - ./node_modules/@nathanfriend/fortune-flash-briefings/update-fortune-cookie.js:/etc/periodic/daily/update-fortune-cookie
+            - ./node_modules/@nathanfriend/fortune-flash-briefings/update-oddly-specific-fortunes.js:/etc/periodic/daily/update-oddly-specific-fortunes
+            - nginx-flash-briefings-volume:/etc/nginx/html/flash-briefings
             - ./static/skills:/etc/nginx/html/skills
         networks:
             - inspirograph-network
@@ -59,6 +62,7 @@ services:
 volumes:
     inspirograph-mysql-volume:
     nginx-certs-volume:
+    nginx-flash-briefings-volume:
 
 networks:
     inspirograph-network:
