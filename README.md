@@ -41,7 +41,7 @@ To run the Docker network locally, run at the root of this repository:
 
 This will run the Docker network with some development options enabled.  Although in most cases, it suffices to run the normal command, `docker-compose up -d --build`.
 
-To remove take down the network and delete the data volume:
+To take down the network and delete the data volume:
 
 `docker-compose down; docker volume rm website-30-docker_inspirograph-mysql-volume`
 
