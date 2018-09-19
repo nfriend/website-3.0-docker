@@ -4,7 +4,7 @@ All configuration and deployment scripts needed to automate the deployment of my
 ## How to deploy
 
 1. Install Node, Docker, and git on the server
-2. Clone this repository on the server
+2. Clone this repository on the server: `git clone https://github.com/nfriend/website-3.0-docker.git`
 3. Run `npm install` inside this repository
 4. Run `docker-compose up -d --build` inside this repository
 
