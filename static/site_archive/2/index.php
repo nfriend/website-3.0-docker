@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+		session_start();
+		$_SESSION['animation'] = 1;
+?><!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -55,12 +58,6 @@
 			}
 			
 		</script>
-		
-	<?php
-		session_start();
-		$_SESSION['animation'] = 1;
-	?>
-		
 		
 	</head>
 

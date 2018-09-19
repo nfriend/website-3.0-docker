@@ -28,8 +28,13 @@ To remove take down the network and delete the data volume:
 
 - All static content
 - Rook
+- Rookkeeper
 - Battleship
 - ldraw-visualizer
 - Node chat
+- Deck of Cards
+- Portfolio?
+- Speller?
+
 - MySQL user is currenty defined on '%' - defining the user as 'php' didn't work.  Investigate?
    - Now it is defined as 'inspirograph-php-container.%', which is better, but still not what I want.

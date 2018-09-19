@@ -15,7 +15,7 @@
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="stylesheet" type="text/css" href="template.css">
 		
-		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		
 		<script type="text/javascript">
 			google.load("jquery", "1");			

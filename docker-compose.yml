@@ -21,10 +21,17 @@ services:
             - ./node_modules/@nathanfriend/origins-host:/etc/nginx/html/origins
             - ./node_modules/@nathanfriend/webgl-chess:/etc/nginx/html/webgl-chess
             - ./node_modules/@nathanfriend/nfjs-demo:/etc/nginx/html/nfjs
+            - ./node_modules/@nathanfriend/mandelbrot:/etc/nginx/html/mandelbrot
             - ./node_modules/@nathanfriend/fortune-flash-briefings/update-fortune-cookie.js:/etc/periodic/daily/update-fortune-cookie
             - ./node_modules/@nathanfriend/fortune-flash-briefings/update-oddly-specific-fortunes.js:/etc/periodic/daily/update-oddly-specific-fortunes
             - nginx-flash-briefings-volume:/etc/nginx/html/flash-briefings
             - ./static/skills:/etc/nginx/html/skills
+            - ./static/ahholyjesus:/etc/nginx/html/ahholyjesus
+            - ./static/probe:/etc/nginx/html/probe
+            - ./static/site_archive:/etc/nginx/html/site_archive
+            - ./static/WordCloud:/etc/nginx/html/WordCloud
+            - ./static/wedding:/etc/nginx/html/wedding
+            - ./static/battleship.pdf:/etc/nginx/battleship.pdf
         networks:
             - inspirograph-network
         environment:
@@ -36,6 +43,7 @@ services:
         build: ./php
         volumes:
             - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
+            - ./static/site_archive:/etc/nginx/html/site_archive
         networks:
             - inspirograph-network
         restart: always
