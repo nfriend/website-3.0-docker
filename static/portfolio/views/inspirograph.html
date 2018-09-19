@@ -1,0 +1,163 @@
+<div header subtitle="Inspirograph" class="header"></div>
+<div class="scroll-container">
+    <div class="portfolio-content">
+        
+        <p>
+            Inspirograph began as an entertaining and nostalgic way to familiarize myself with <a href="http://d3js.org">D3.js</a> and <a href="http://typescriptlang.org">TypeScript</a>.
+            It quickly grew to be one of the most ambitious personal projects I've attempted.
+            Inspirograph forced me to get creative with the mechanics of the user interface; it was of the utmost importance that manipulating the gears was a tangible, physical, and effortless experience.
+        </p>
+        <br>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Dates:</b></div>
+            <div class="col-sm-10">July - August, 2014</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Technologies:</b></div>
+            <div class="col-sm-10">
+                <a href="http://d3js.org/">D3.js</a>,
+                <a href="http://www.typescriptlang.org/">TypeScript</a>,
+                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG">SVG</a>,
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">HTML5 Canvas</a>
+            </div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Project type:</b></div>
+            <div class="col-sm-10">Personal project</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Project URL:</b></div>
+            <div class="col-sm-10"><a href="http://nathanfriend.io/inspirograph">nathanfriend.io/inspirograph</a></div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Source code:</b></div>
+            <div class="col-sm-10"><a href="https://github.com/nfriend/inspirograph">github.com/nfriend/inspirograph</a></div>
+        </div>
+        <hr>
+        <div class="cleared"></div>
+        <br>
+        
+        
+        <h5>Generating the gears</h5>
+        <p>
+            The simplest way to generate the gear visuals would have been to create a series of .PNGs, one for each available size.
+            However, I wanted the flexibility to easily create new gear sizes in the future (and potentially let users create custom gears).
+            This meant programmatically assembling SVG command strings into an SVG path that described the gear's toothy perimeter.
+            To accomplish this, I had to dust off some of the trigonometry I hadn't touched since 10<sup>th</sup> grade Geometry.
+            <a href="https://github.com/nfriend/inspirograph/blob/master/Spirograph/scripts/Shapes/Gear.ts">The result was rather headache-inducing</a>, but ultimately allowed for a great deal of flexibility down the road.
+        </p>
+        <p>Here's an example of the 30-tooth gear, one of the smaller gear options:</p>
+        <svg style="margin-left:10px; margin-bottom: 15px" width="150" height="150"><g class="gear" transform="translate(75,75)"><path d="M 60 0 A60 60 0 0 1 59.99086170938347 1.0471443862370107 L 69.7336288664222 6.1009019923360714 A70 70 0 0 1 69.47823061489254 8.530854038360323 L 58.89763100685984 11.44853972259269 A60 60 0 0 1 58.68885604402834 12.474701449065561 A60 60 0 0 1 58.462203887114114 13.4970632606319 L 66.94133291741248 20.46601933059158 A70 70 0 0 1 66.18630029195216 22.78977081200097 L 55.23029120714642 23.44386770935642 A60 60 0 0 1 54.812727458556054 24.404198584548013 A60 60 0 0 1 54.378467222199 25.357095704441967 L 61.223379499757705 33.9366734172436 A70 70 0 0 1 60.001711049147865 36.05266524370379 L 49.14912265733951 34.41458618106276 A60 60 0 0 1 48.54101966249685 35.26711513754839 A60 60 0 0 1 47.91813060283757 36.1089013891229 L 52.82967061559404 45.9241320293355 A70 70 0 0 1 51.19475911334194 47.73988520437489 L 40.919901603749906 43.88122209715023 A60 60 0 0 1 40.14783638153149 44.588689528643656 A60 60 0 0 1 39.36354173943044 45.282574813366324 L 42.12705162064338 55.9044857033105 A70 70 0 0 1 40.15035054457322 57.34064310022943 L 30.902284494603258 51.43003804212674 A60 60 0 0 1 30 51.96152422706632 A60 60 0 0 1 29.088577214780223 52.47718242836375 L 29.58327832184896 63.4415450925655 A70 70 0 0 1 27.351178994249178 64.43533974167082 L 19.5340892674294 56.731114535959 A60 60 0 0 1 18.541019662496844 57.06339097770921 A60 60 0 0 1 17.542302283364208 57.378285357782126 L 15.746573804070536 68.20590453496646 A70 70 0 0 1 13.35662967635814 68.71390284133648 L 7.312160604308849 59.55276909847932 A60 60 0 0 1 6.271707796059208 59.6713137220964 A60 60 0 0 1 5.22934456485949 59.771681885504734 L 1.2216684506098319 69.98933866094738 A70 70 0 0 1 -1.2216684506098434 69.98933866094738 L -5.2293445648594945 59.771681885504734 A60 60 0 0 1 -6.271707796059201 59.6713137220964 A60 60 0 0 1 -7.3121606043088425 59.55276909847932 L -13.35662967635814 68.71390284133648 A70 70 0 0 1 -15.746573804070536 68.20590453496646 L -17.5423022833642 57.378285357782126 A60 60 0 0 1 -18.541019662496844 57.06339097770921 A60 60 0 0 1 -19.534089267429387 56.73111453595901 L -27.351178994249157 64.43533974167083 A70 70 0 0 1 -29.583278321848955 63.4415450925655 L -29.088577214780216 52.47718242836375 A60 60 0 0 1 -29.999999999999982 51.961524227066334 A60 60 0 0 1 -30.90228449460325 51.43003804212674 L -40.1503505445732 57.34064310022944 A70 70 0 0 1 -42.127051620643385 55.9044857033105 L -39.363541739430445 45.28257481336631 A60 60 0 0 1 -40.14783638153149 44.588689528643656 A60 60 0 0 1 -40.91990160374989 43.881222097150236 L -51.194759113341924 47.7398852043749 A70 70 0 0 1 -52.82967061559404 45.92413202933551 L -47.91813060283757 36.1089013891229 A60 60 0 0 1 -48.54101966249684 35.267115137548394 A60 60 0 0 1 -49.1491226573395 34.41458618106278 L -60.001711049147865 36.0526652437038 A70 70 0 0 1 -61.223379499757705 33.9366734172436 L -54.378467222199 25.357095704441967 A60 60 0 0 1 -54.81272745855605 24.404198584548023 A60 60 0 0 1 -55.230291207146415 23.443867709356446 L -66.18630029195216 22.78977081200098 A70 70 0 0 1 -66.94133291741247 20.466019330591585 L -58.46220388711412 13.497063260631878 A60 60 0 0 1 -58.68885604402835 12.474701449065549 A60 60 0 0 1 -58.89763100685984 11.44853972259269 L -69.47823061489254 8.530854038360323 A70 70 0 0 1 -69.7336288664222 6.100901992336099 L -59.99086170938347 1.047144386236999 A60 60 0 0 1 -60 7.347880792910568e-15 A60 60 0 0 1 -59.99086170938347 -1.0471443862369916 L -69.7336288664222 -6.100901992336056 A70 70 0 0 1 -69.47823061489254 -8.530854038360342 L -58.89763100685984 -11.448539722592686 A60 60 0 0 1 -58.68885604402835 -12.474701449065545 A60 60 0 0 1 -58.462203887114114 -13.4970632606319 L -66.9413329174125 -20.46601933059155 A70 70 0 0 1 -66.18630029195216 -22.78977081200098 L -55.23029120714643 -23.443867709356418 A60 60 0 0 1 -54.81272745855606 -24.404198584547988 A60 60 0 0 1 -54.378467222199006 -25.35709570444196 L -61.223379499757705 -33.93667341724359 A70 70 0 0 1 -60.001711049147865 -36.05266524370379 L -49.14912265733952 -34.414586181062745 A60 60 0 0 1 -48.54101966249685 -35.26711513754838 A60 60 0 0 1 -47.918130602837586 -36.108901389122884 L -52.829670615594026 -45.92413202933552 A70 70 0 0 1 -51.19475911334194 -47.73988520437488 L -40.91990160374993 -43.8812220971502 A60 60 0 0 1 -40.147836381531505 -44.58868952864364 A60 60 0 0 1 -39.36354173943046 -45.2825748133663 L -42.12705162064338 -55.9044857033105 A70 70 0 0 1 -40.15035054457325 -57.34064310022941 L -30.90228449460327 -51.430038042126725 A60 60 0 0 1 -30.000000000000032 -51.961524227066306 A60 60 0 0 1 -29.088577214780212 -52.477182428363754 L -29.583278321849 -63.44154509256548 A70 70 0 0 1 -27.351178994249178 -64.43533974167082 L -19.5340892674294 -56.731114535959 A60 60 0 0 1 -18.541019662496854 -57.063390977709204 A60 60 0 0 1 -17.54230228336423 -57.37828535778212 L -15.746573804070577 -68.20590453496646 A70 70 0 0 1 -13.356629676358192 -68.71390284133648 L -7.312160604308837 -59.55276909847932 A60 60 0 0 1 -6.271707796059208 -59.6713137220964 A60 60 0 0 1 -5.229344564859502 -59.771681885504734 L -1.2216684506098459 -69.98933866094738 A70 70 0 0 1 1.221668450609819 -69.98933866094738 L 5.229344564859472 -59.771681885504734 A60 60 0 0 1 6.2717077960591805 -59.6713137220964 A60 60 0 0 1 7.312160604308862 -59.55276909847932 L 13.356629676358098 -68.71390284133649 A70 70 0 0 1 15.746573804070545 -68.20590453496646 L 17.542302283364208 -57.378285357782126 A60 60 0 0 1 18.541019662496836 -57.06339097770921 A60 60 0 0 1 19.534089267429383 -56.73111453595901 L 27.351178994249146 -64.43533974167083 A70 70 0 0 1 29.583278321848976 -63.44154509256549 L 29.088577214780194 -52.47718242836376 A60 60 0 0 1 30.000000000000007 -51.96152422706632 A60 60 0 0 1 30.90228449460325 -51.43003804212674 L 40.15035054457322 -57.34064310022943 A70 70 0 0 1 42.12705162064336 -55.90448570331051 L 39.363541739430424 -45.28257481336633 A60 60 0 0 1 40.14783638153148 -44.58868952864368 A60 60 0 0 1 40.91990160374988 -43.881222097150264 L 51.194759113341945 -47.73988520437488 A70 70 0 0 1 52.82967061559403 -45.92413202933551 L 47.91813060283757 -36.1089013891229 A60 60 0 0 1 48.54101966249684 -35.267115137548394 A60 60 0 0 1 49.1491226573395 -34.41458618106278 L 60.00171104914785 -36.052665243703814 A70 70 0 0 1 61.22337949975771 -33.93667341724358 L 54.378467222198985 -25.357095704442 A60 60 0 0 1 54.812727458556054 -24.404198584548013 A60 60 0 0 1 55.230291207146394 -23.443867709356482 L 66.18630029195215 -22.789770812001034 A70 70 0 0 1 66.9413329174125 -20.466019330591546 L 58.46220388711411 -13.497063260631924 A60 60 0 0 1 58.688856044028334 -12.474701449065595 A60 60 0 0 1 58.89763100685985 -11.448539722592677 L 69.47823061489254 -8.530854038360365 A70 70 0 0 1 69.7336288664222 -6.100901992336086 L 59.99086170938347 -1.0471443862370702 A60 60 0 0 1 60 -1.4695761585821136e-14 Z M 57 0 A5 5 0 1 0 47 0 A5 5 0 1 0 57 0 Z  M 47.53180887838608 20.260849529471603 A5 5 0 1 0 37.53180887838608 20.260849529471603 A5 5 0 1 0 47.53180887838608 20.260849529471603 Z  M 29.881495694644435 34.11198061356311 A5 5 0 1 0 19.881495694644435 34.11198061356311 A5 5 0 1 0 29.881495694644435 34.11198061356311 Z  M 7.581095974444779 37.244002488299785 A5 5 0 1 0 -2.4189040255552214 37.244002488299785 A5 5 0 1 0 7.581095974444779 37.244002488299785 Z  M -12.680914494379476 27.20344165636182 A5 5 0 1 0 -22.680914494379476 27.20344165636182 A5 5 0 1 0 -12.680914494379476 27.20344165636182 Z  M -21.802065511911643 6.39983798783247 A5 5 0 1 0 -31.802065511911643 6.39983798783247 A5 5 0 1 0 -21.802065511911643 6.39983798783247 Z  M -12.487269878611489 -14.421274907940171 A5 5 0 1 0 -22.48726987861149 -14.421274907940171 A5 5 0 1 0 -12.487269878611489 -14.421274907940171 Z  M 10.201123341429643 -16.999932314667756 A5 5 0 1 0 0.20112334142964272 -16.999932314667756 A5 5 0 1 0 10.201123341429643 -16.999932314667756 Z  M 17.10272754850307 4.432543589952418 A5 5 0 1 0 7.10272754850307 4.432543589952418 A5 5 0 1 0 17.10272754850307 4.432543589952418 Z  Z "></path></g></svg>
+        <p>
+            Creating new gears is as simple as passing D3 a new <span class="inline-code">GearOptions</span> object that specifies the gear's radius, tooth count, and number of holes to punch out of the body of the gear.
+        </p>
+        <br>
+        
+        
+        <h5>Working with paths</h5>
+        <p>
+            Under the surface, Inspirograph assembles its SVG definitions by concatenating string after string of command definitions that describe each angle and line of the gear.
+            In order to avoid directly manipulating strings, I wrote a few simple utility objects to wrap the SVG creation process in a compile-time safety net.
+            So instead of doing this:
+        </p>
+        <div code brush="javascript">
+            var svg = 'M ' + options.radius + ' 0 ';
+            for (var i = 0; i &lt; options.toothCount; i++) {
+                svg += 'A' + options.radius + ' ' + options.radius + ' ' + 0 + ' ' + 0 + ' ' + 1 + ' ' + newX + ' ' + newY;
+                // etc....
+            }
+
+            return svg;
+        </div>
+        <p>... I was able to take advantage of TypeScript's static typing and write this much safer and less error-prone version:</p>
+        <div code brush="javascript">
+            var pathBuilder = new SVG.PathBuilder(),
+            pathBuilder.addCommand(new SVG.MCommand(options.radius, 0));
+            for (var i = 0; i &lt; options.toothCount; i++) {
+                pathBuilder.addCommand(new SVG.ACommand(options.radius, options.radius, 0, false, true, newX, newY));
+                // etc....
+            }
+
+            return pathBuilder.toString();
+        </div>
+        <p>I was initially tempted to forgo this extra abstraction and just build the strings by hand, but the extra time it took to write this abstraction quickly paid off when I moved on to more complex SVG drawings (like the <a href="https://github.com/nfriend/inspirograph/blob/master/Spirograph/scripts/Shapes/RingGear.ts">Ring Gear</a> and the <a href="https://github.com/nfriend/inspirograph/blob/master/Spirograph/scripts/Shapes/Beam.ts">Beam</a>).</p>
+        <br>
+        
+        
+        <h5>Making it natural</h5>
+        <p>
+            Making Inspirograph easy to use turned out to be much more difficult that I originally thought.
+            Initially, I used a simple click and drag algorithm that based the rotating gear's position on the mouse's angle with respect to the center of the screen.
+            This proved to be overly simplistic, however.  For example, take this gear combination:
+        </p>
+        <img src="images/gear-example.png">
+        <div class="cleared"></div>
+        <br>
+        <p>
+            If the user begins dragging on the left edge of the inner gear, the mouse is actually to the <em>right</em> of the center of the screen.
+            This caused the gear to unexpectedly jump depending on where the user initiated the drag.
+            To solve this, I temporarily "move" the center of the screen relative to the start location of the pointer.
+            Then, as the user begins to drag, I slowly ease this virtual "center" back to the true center of the screen.
+            You can witness this yourself by turning on the "cursor tracker" option by pressing <span class="keyboard-key">T</span>.
+        </p>
+        <br>
+        
+        
+        <h5>Playing around</h5>
+        <p>
+            Watching friends, family, and total strangers create new and unusual creations using Inspirograph was by and large and the most rewarding part of the project.
+            While I usually stuck to simple, elegant designs with pleasing color themes:
+        </p>
+        <div class="row inspirograph-image-container">
+            <div class="col-sm-6">
+                <a href="images/53dee33419f3a.png">
+                    <img class="img-responsive inspirograph-image" src="images/inspirograph3.jpg">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <a href="images/53f6ad68457f3.png">
+                    <img class="img-responsive inspirograph-image" src="images/inspirograph2.jpg">
+                </a>
+            </div>
+        </div>
+        <p>... others were much more bombastic:</p>
+        <div class="row inspirograph-image-container">
+            <div class="col-sm-6">
+                <a href="images/53fbccc38c978.png">
+                    <img class="img-responsive inspirograph-image" src="images/inspirograph1.jpg">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <a href="images/Uxj6fI7.jpg">
+                    <img class="img-responsive inspirograph-image" src="images/Uxj6fI7.jpg">
+                </a>
+            </div>
+        </div>
+        <br>
+        <p>Check out the gallery for yourself at <a href="http://nathanfriend.io/inspirograph/gallery">nathanfriend.io/inspirograph/gallery</a></p>
+        <br>
+        
+        
+        <h5>Reception</h5>
+        <p>
+            Inspirograph turned out to be a much bigger hit than I expected.
+            Since its release (in October of 2014), Inspirograph has received over 3,500,000 page hits and more than 100,000 creations have been submitted to the gallery.
+            Fortunately, I host Inspirograph on <a href="http://azure.microsoft.com/">Microsoft's Azure platform</a>, which allowed me to quickly scale my server's hardware to meet the sudden demand.
+        </p>
+        <p>Inspirograph was featured by the <a href="http://adobe.tumblr.com/post/100086819603/the-amazing-inspirograph">Adobe Inspire magazine</a> and <a href="http://www.chromeexperiments.com/detail/inspirograph/?f=">Chrome Experiments</a>, made appearances on <a href="http://www.reddit.com/r/InternetIsBeautiful/comments/2kwc6k/incredibly_well_done_online_inspirograph_maker/">Reddit</a> and <a href="https://news.ycombinator.com/item?id=8475293">Hacker News</a>, and <a href="https://twitter.com/search?q=inspirograph&src=typd">enjoyed a warm reception on Twitter:</a></p>
+        <div class="row">
+            <div class="col-sm-6">
+                <blockquote class="twitter-tweet" lang="en"><p>If this doesn&#39;t make you happy, nothing will: <a href="http://t.co/JTFue1zBIc">http://t.co/JTFue1zBIc</a> Digital spirograph! (via <a href="https://twitter.com/SarDSta">@SarDSta</a>)</p>&mdash; Jennifer Howard (@JenHoward) <a href="https://twitter.com/JenHoward/status/522468706216316929">October 15, 2014</a></blockquote>
+                <blockquote class="twitter-tweet" lang="en"><p>This is insanely cool: Inspirograph <a href="http://t.co/7KbwteLl2G">http://t.co/7KbwteLl2G</a> You&#39;re welcome.</p>&mdash; Avinash Kaushik (@avinash) <a href="https://twitter.com/avinash/status/522841920570019840">October 16, 2014</a></blockquote>
+                <blockquote class="twitter-tweet" lang="en"><p>Yes! <a href="https://twitter.com/NathanAFriend">@NathanAFriend</a> recreated our favorite childhood toy for the web: the spirograph! Prepare to lose hours to this: <a href="http://t.co/LVKMNl9M5U">http://t.co/LVKMNl9M5U</a></p>&mdash; Brand New School (@BrandNewSchool) <a href="https://twitter.com/BrandNewSchool/status/522762529903509504">October 16, 2014</a></blockquote>
+            </div>
+            <div class="col-sm-6">
+                <blockquote class="twitter-tweet" lang="en"><p>digital spirograph&#10;&#10;DIGITAL SPIROGRAPH&#10;&#10;D*I*G*I*T*A*L S*P*I*R*O*G*R*A*P*H&#10;&#10;<a href="http://t.co/MIU6fmUn4R">http://t.co/MIU6fmUn4R</a></p>&mdash; #MGKmergate (@mightygodking) <a href="https://twitter.com/mightygodking/status/522130725685190656">October 14, 2014</a></blockquote>
+                <blockquote class="twitter-tweet" lang="en"><p>Got things you need to do? Like eat or sleep? Put if off for a while with this gorgeous digital Spirograph. <a href="http://t.co/Wca7ZIqVNe">http://t.co/Wca7ZIqVNe</a></p>&mdash; craig burston (@skipratmedia) <a href="https://twitter.com/skipratmedia/status/523891260101505024">October 19, 2014</a></blockquote>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

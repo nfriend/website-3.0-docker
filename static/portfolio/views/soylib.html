@@ -1,0 +1,121 @@
+<div header subtitle="SoyLib" class="header"></div>
+<div class="scroll-container">
+    <div class="portfolio-content">
+        
+        <p>
+            Beginning in 2013, DuPont Pioneer's Research IM department began a concerted effort to provide a consistent end-user experience across its entire application portfolio.
+            The result of this effort was SoyLib, an opinionated WPF library that enforces a common backend structure and provides reusable frontend components.
+        </p>
+        <br>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Dates:</b></div>
+            <div class="col-sm-10">May 2013 - present</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Technologies:</b></div>
+            <div class="col-sm-10">
+                <a href="http://msdn.microsoft.com/en-us/library/ms754130(v=vs.110).aspx">WPF</a>,
+                <a href="http://msdn.microsoft.com/en-us/library/ff648465.aspx">Microsoft Prism</a>
+            </div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Project type:</b></div>
+            <div class="col-sm-10">Work project</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>How I Contributed:</b></div>
+            <div class="col-sm-10">I designed and developed a majority of the framework's visual components</div>
+        </div>
+        <hr>
+        <div class="cleared"></div>
+        <br>
+        
+        
+        <h5>Modals</h5>
+        <p>The most important (and most complex) UI components provided by SoyLib are modals.  Inspired by Twitter Bootstrap, SoyLib allows developers to easily show custom content as a modal, and gracefully handles displaying several modals simultaneously.</p>
+        <p>Showing a modal is simple:</p>
+        <div code brush="c-sharp">
+            var uiManager = new UserInteractionManager();
+            uiManager.ShowCustomModal("MyCustomView");  // where MyCustomView has been registered with the DI container
+        </div>
+
+        <p>SoyLib ships with some stock views that mimic WPF's built-in <span class="inline-code">ShowMessageBox()</span> functionality:</p>
+        <div code brush="c-sharp">
+            uiManager.ShowMessageBox("Your Message Box", "Here's a message box for you", MessageBoxButton.OK);
+        </div>
+        <p>The result:</p>
+        <img src="images/modals.gif" class="img-responsive demo-image bordered">
+        <br>
+        
+        
+        <h5>Validation</h5>
+        <p>
+            Clear, unobtrusive feedback is essential to a positive user experience.
+            SoyLib provides a custom template for the built-in WPF Expander control to add real-time validation warnings that appear at the bottom of the expander.
+            Soylib builds upon WPF's built-in <span class="inline-code"><a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo(v=vs.110).aspx">IDataErrorInfo</a></span>-based validation.
+        </p>
+        <p>To configure an expander to display validation warnings, a developer must specify its style and connect it to its target elements using the <span class="inline-code">ErrorMessages</span> attached property:</p>
+        <div code brush="xml">
+            &lt;Expander&gt;
+              &lt;Expander.Style&gt;
+                &lt;Style TargetType=&quot;{x:Type Expander}&quot; BasedOn=&quot;{StaticResource ErrorAwareExpanderStyle}&quot;&gt;
+                  &lt;Setter Property=&quot;ap:ErrorAggregator.ErrorMessages&quot;&gt;
+                    &lt;Setter.Value&gt;
+                      &lt;MultiBinding Converter=&quot;{converters:TargetsConverter}&quot;&gt;
+                        &lt;Binding ElementName=&quot;FirstNameTextBox&quot; Path=&quot;(Validation.Errors).CurrentItem.ErrorContent&quot; /&gt;
+                        &lt;Binding ElementName=&quot;LastNameTextBox&quot; Path=&quot;(Validation.Errors).CurrentItem.ErrorContent&quot; /&gt;
+                        &lt;Binding ElementName=&quot;AgeTextBox&quot; Path=&quot;(Validation.Errors).CurrentItem.ErrorContent&quot; /&gt;
+                        &lt;Binding ElementName=&quot;SocialSecurityTextBox&quot; Path=&quot;(Validation.Errors).CurrentItem.ErrorContent&quot; /&gt;
+                      &lt;/MultiBinding&gt;
+                    &lt;/Setter.Value&gt;
+                  &lt;/Setter&gt;
+                &lt;/Style&gt;
+              &lt;/Expander.Style&gt;
+
+              &lt;!-- expander content here --&gt;
+
+            &lt;/Expander&gt;
+        </div>
+        <p>The result:</p>
+        <img src="images/animated-expander.gif" class="img-responsive demo-image">
+        <br>
+        
+        
+        <h5>Modules</h5>
+        <p>
+            SoyLib expects its host application to be divided into independent, self-contained modules.
+            Modules are discovered at run-time and are displayed to the user as a set of Office 2013-inspired tabs:
+        </p>
+        <img src="images/tabs.gif" class="img-responsive demo-image bordered">
+        <p>To flag a class as a module, a module must expose a module class that implements the <span class="inline-code">IModule</span> interface:</p>
+        <div code brush="c-sharp">
+            [MainModule("My Files", "MyFilesDefaulView", ColorTheme.Red)]
+            public class MyFilesModule : IModule
+            {
+                ....
+        </div>
+        <p>The <span class="inline-code">[MainModule]</span> attribute provides meta-data (like the tab title and module's theme color) that SoyLib uses when rendering the module's tab.</p>
+        <p>By default, a subtle sliding animation is applied when switching modules to give the user the feeling of a context switch:</p>
+        <img src="images/transitions.gif" class="img-responsive demo-image bordered">
+        <br>
+        
+        
+        <h5>Progress Bars</h5>
+        <p>
+            Another minor but handy piece of functionality provided by SoyLib is enhanced progress-bar handling.
+            Progress bars can be shown inside a modal window:
+        </p>
+        <img src="images/modal-progress-bar.gif" class="img-responsive demo-image bordered">
+        <p>
+            or in the "notification area" underneath the module tabs:
+        </p>
+        <img src="images/quiet-progress.gif" class="img-responseive demo-image">
+        <p>Progress bars are displayed programmatically through the <span class="inline-code">IUserInteractionManager</span> class:</p>
+        <div code brush="c-sharp">
+            var uiManager = new UserInteractionManager();
+            uiManager.ShowProgressBar(message: "Progress bar message goes here.", title: "One moment...");
+        </div>
+        <br>
+        
+    </div>
+</div>

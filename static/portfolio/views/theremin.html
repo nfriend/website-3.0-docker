@@ -1,0 +1,72 @@
+<div header subtitle="Theremin" class="header"></div>
+<div class="scroll-container">
+    <div class="portfolio-content">
+        
+        <p>
+            Theremin is a musical experiment using a Leap Motion controller and the Web Audio API (currently only implemented in Chrome).
+        </p>
+        <br>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Dates:</b></div>
+            <div class="col-sm-10">August - September, 2013</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Technologies:</b></div>
+            <div class="col-sm-10">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">Web Audio API</a>,
+                <a href="https://www.leapmotion.com/">Leap Motion controller</a>
+            </div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Project type:</b></div>
+            <div class="col-sm-10">Personal project</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Project URL:</b></div>
+            <div class="col-sm-10"><a href="http://nathanfriend.io/theremin">nathanfriend.io/theremin</a></div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Source code:</b></div>
+            <div class="col-sm-10"><a href="https://github.com/nfriend/Theremin">github.com/nfriend/Theremin</a></div>
+        </div>
+        <hr>
+        <div class="cleared"></div>
+        <br>
+        
+        
+        <p>Since chances are high you don't own a Leap Motion controller, I put together a quick video to demonstrate how my digital Theremin operates:</p>
+        <iframe width="560" height="315" src="//www.youtube.com/embed/J5wW4-yr6zY" frameborder="0" allowfullscreen></iframe>
+        <div class="cleared"></div>
+        <br>
+        
+
+        <h5>Making noise</h5>
+        <p>
+            The Leap Motion controller provides detailed 3D spatial information for all hands within its detection radius.
+            In addition, it reports the position and angle of each palm relative to the ground.
+            With this many data points, I was able to give each modifier its own axis, giving the user full control over the instrument's output:
+        </p>
+        <div class="row theremin-control-list">
+            <div class="col-xs-3 col-sm-2"><b>Pitch:</b></div>
+            <div class="col-xs-9 col-sm-10">Hand #1, Y axis</div>
+        </div>
+        <div class="row theremin-control-list">
+            <div class="col-xs-3 col-sm-2"><b>Volume:</b></div>
+            <div class="col-xs-9 col-sm-10">Hand #1, Z axis</div>
+        </div>
+        <div class="row theremin-control-list">
+            <div class="col-xs-3 col-sm-2"><b>Tone:</b></div>
+            <div class="col-xs-9 col-sm-10">Hand #1, palm rotation</div>
+        </div>
+        <div class="row theremin-control-list">
+            <div class="col-xs-3 col-sm-2"><b>Vibrato speed:</b></div>
+            <div class="col-xs-9 col-sm-10">Hand #2, Y axis</div>
+        </div>
+        <div class="row theremin-control-list">
+            <div class="col-xs-3 col-sm-2"><b>Vibrato intensity:</b></div>
+            <div class="col-xs-9 col-sm-10">Hand #2, Z axis</div>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>

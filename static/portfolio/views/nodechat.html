@@ -1,0 +1,75 @@
+<div header subtitle="NodeChat" class="header"></div>
+<div class="scroll-container">
+    <div class="portfolio-content">
+        
+        <p>
+            NodeChat is simple chat client I built to familiarize myself with some trendy front-end technologies.
+        </p>
+        <br>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Dates:</b></div>
+            <div class="col-sm-10">February - March, 2014</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Technologies:</b></div>
+            <div class="col-sm-10">
+                <a href="https://angularjs.org/">AngularJS</a>,
+                <a href="http://nodejs.org/">Node.js</a>,
+                <a href="https://developer.mozilla.org/en-US/docs/WebSockets">WebSockets</a>,
+                <a href="http://lesscss.org/">Less</a>,
+                <a href="http://gruntjs.com/">Grunt</a>,
+                <a href="http://yeoman.io/">Yeoman</a>,
+                <a href="http://bower.io/">Bower</a>
+            </div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Project type:</b></div>
+            <div class="col-sm-10">Personal project</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Project URL:</b></div>
+            <div class="col-sm-10"><a href="http://nathanfriend.io/NodeChat">nathanfriend.io/NodeChat</a></div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Source code:</b></div>
+            <div class="col-sm-10"><a href="https://github.com/nfriend/NodeChat">github.com/nfriend/NodeChat</a></div>
+        </div>
+        <hr>
+        <div class="cleared"></div>
+        <br>
+        
+        
+        <p>
+            The scope of NodeChat is tiny.
+            It provides users with a single open, anonymous chatroom, and doesn't retain old chat messages.
+            However, a few hidden features make NodeChat more complex than its stripped-down interface would have you believe.
+        </p>
+        <br>
+        
+        
+        <h5>Emoticons</h5>
+        <p>
+            NodeChat transforms special patterns into icons from the excellent <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> icon library.
+            Standard ASCII emoticons are mapped intuitively; inputting <span class="inline-code">:)</span> results in <i class="nodechat-emoticon-example fa fa-smile-o"></i> and <span class="inline-code">&lt;3</span> will display <i class="nodechat-emoticon-example fa fa-heart-o"></i>.
+            More specialized icons can be accessed by enclosing the description of the icon in [square brackets].
+            For example, <span class="inline-code">[like]</span> will display as <i class="nodechat-emoticon-example fa fa-thumbs-o-up"></i>.
+        </p>
+        <p>
+            In addition to these standard emoticons, NodeChat is able to display any icon in the Font Awesome library by enclosing the icon's class inside [[double square brackets]]
+            (i.e. <span class="inline-code">[[fa-puzzle-piece]]</span> shows up as <i class="nodechat-emoticon-example fa fa-puzzle-piece"></i>).
+            For the curious, the implementation of the emoticon filter can be found <a href="https://github.com/nfriend/NodeChat/blob/master/app/scripts/filters/emoticon-filter.js">here</a>.
+        </p>
+        <br>
+        
+        
+        <h5>Profanity filter</h5>
+        <p>
+            One of the more entertaining pieces of NodeChat is its built-in profanity filter.
+            NodeChat does its best to replace the most common dirty language with an innocuous translation, leading to entertaining sentences like <em>"Mother pancaking piece of sheer beauty elbow mango smoothie!"</em>.
+            See how the filter works for yourself <a href="https://github.com/nfriend/NodeChat/blob/master/app/scripts/services/profanity-cleanser.js">here</a>.
+        </p>
+        <br>
+        <br>
+        
+    </div>
+</div>

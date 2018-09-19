@@ -1,0 +1,103 @@
+<div header subtitle="Inspirograph" class="header"></div>
+<div class="scroll-container">
+    <div class="portfolio-content">
+        JavaScript:
+        <div code highlighted-lines="[5, 6, 8]" style="margin-bottom: 20px">
+            /// &lt;reference path='../definitions/references.d.ts' /&gt;
+
+            // 'use strict';
+
+            angular.module('portfolio.directives').
+                directive('code', [function () {
+
+                    var brush = new SyntaxHighlighter.brushes.JScript();
+                    brush.init({
+                        toolbar: false,
+                        highlight: [4, 8, 9]
+                    });
+
+                    return {
+                        link: function (scope, element, attrs) {
+                            element.html(brush.getHtml(element.html()));
+                        }
+                    };
+                }]);
+        </div>
+        HTML:
+        <div code brush="xml" auto-links="false" gutter="false" tab-size="2" toolbar="true" style="margin-bottom: 20px">
+            &lt;body class=&quot;portfolio&quot; ng-swipe-right=&quot;openSidePanel()&quot; ng-swipe-left=&quot;closeSidePanel()&quot; ng-class=&quot;{'side-panel-is-open': sidePanelIsOpen}&quot;&gt;
+                &lt;div class=&quot;swipe-insurance&quot;&gt;&lt;/div&gt;
+                &lt;div menu class=&quot;menu hidden-sm hidden-xs&quot; /&gt;
+                &lt;div menu-mobile class=&quot;menu-mobile hidden-md hidden-lg&quot; /&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                    &lt;div class=&quot;row&quot; id=&quot;header-spacer&quot;&gt;&lt;/div&gt;
+                    &lt;div ie7-warning /&gt;
+                    &lt;div class=&quot;main-view-container&quot;&gt;
+                        &lt;div ng-view class=&quot;container-fluid main-view&quot; ng-swipe-right=&quot;alert()&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;
+                &lt;!--[if lt IE 9]&gt;
+                  &lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;
+                  &lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
+                &lt;![endif]--&gt;
+        </div>
+        C#:
+        <div code brush="c-sharp" first-line="45" style="margin-bottom: 20px">
+            else if (e.Args[0].ToLower().StartsWith("/s"))
+            {
+                foreach (Screen screen in Screen.AllScreens)
+                {
+                    if (screen != Screen.PrimaryScreen)
+                    {
+                        BlackOut bo = new BlackOut();
+                        bo.Left = screen.WorkingArea.Left;
+                        bo.Top = screen.WorkingArea.Top;
+                        bo.Width = screen.WorkingArea.Width;
+                        bo.Height = screen.WorkingArea.Height;
+
+                        bo.Show();
+                    }
+                }
+                
+                Screen s = Screen.PrimaryScreen;
+
+                SaverSettings settings = new SaverSettings();
+                settings.Load();
+
+                MainWindow mw = new MainWindow(settings);
+                //mw.Left = s.WorkingArea.Left;
+                //mw.Top = s.WorkingArea.Top;
+                //mw.Width = s.WorkingArea.Width;
+                //mw.Height = s.WorkingArea.Height;
+
+                mw.Show();
+            }
+        </div>
+        CSS:
+        <div code brush="css" style="margin-bottom: 20px">
+            h1 {
+              font-size: 5em;
+            }
+            h2 {
+              font-size: 24px;
+            }
+            h3 {
+              font-size: 24px;
+              margin-top: 0;
+              margin-bottom: 5px;
+            }
+            .cleared {
+              float: none;
+              clear: both;
+            }
+
+
+            
+            .multi-line-break {
+              margin-bottom: 56px;
+            }
+        </div>
+    </div>
+</div>

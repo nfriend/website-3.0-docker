@@ -10,6 +10,7 @@ services:
             - '443:443'
             - '18734:18734'
             - '9300:9300'
+            - '8089:8089'
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
             - nginx-certs-volume:/etc/letsencrypt/live
@@ -33,7 +34,12 @@ services:
             - ./static/site_archive:/etc/nginx/html/site_archive
             - ./static/WordCloud:/etc/nginx/html/WordCloud
             - ./static/wedding:/etc/nginx/html/wedding
-            - ./static/battleship.pdf:/etc/nginx/battleship.pdf
+            - ./static/speller:/etc/nginx/html/speller
+            - ./static/portfolio:/etc/nginx/html/portfolio
+            - ./static/NodeChat:/etc/nginx/html/NodeChat
+            - ./static/battleship:/etc/nginx/html/battleship
+            - ./static/rookkeeper:/etc/nginx/html/rookkeeper
+            - ./static/battleship.pdf:/etc/nginx/html/battleship.pdf
         networks:
             - inspirograph-network
         environment:
@@ -66,6 +72,15 @@ services:
         build:
             context: .
             dockerfile: ./roggle-server/Dockerfile
+        networks:
+            - inspirograph-network
+        restart: always
+    nodechat-server:
+        image: nodechat-server-image
+        container_name: nodechat-server-container
+        build:
+            context: .
+            dockerfile: ./nodechat-server/Dockerfile
         networks:
             - inspirograph-network
         restart: always

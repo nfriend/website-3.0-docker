@@ -1,0 +1,9 @@
+<div class="hidden-xs hidden-sm">
+    <div ng-repeat="project in projects" class="link-container page-{{project.page}}">
+        <a href="#/{{project.page}}" ng-class="{selected: $location.path() === ('/' + project.page)}">
+            <h2 class="project-title">{{project.name}}</h2>
+            <div class="arrow-left"></div>
+        </a>
+        <hr ng-if="project.page === 'home'" class="home-divider">
+    </div>
+</div>

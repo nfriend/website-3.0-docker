@@ -1,0 +1,77 @@
+<div header subtitle="PSI Dashboard" class="header"></div>
+<div class="scroll-container">
+    <div class="portfolio-content">
+        
+        <p>
+            PSI Dashboard is a simple project visualizer that increases project transparency, aids in portfolio planning, and helps identify cross-team dependencies.
+        </p>
+        <br>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Dates:</b></div>
+            <div class="col-sm-10">May - December, 2014</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Technologies:</b></div>
+            <div class="col-sm-10">
+                <a href="https://angularjs.org/">AngularJS</a>,
+                <a href="http://msdn.microsoft.com/en-us/library/dn448365(v=vs.118).aspx">ASP.NET Web API 2</a>
+            </div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Project type:</b></div>
+            <div class="col-sm-10">Work project</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>How I Contributed:</b></div>
+            <div class="col-sm-10">
+                I was the sole developer on the PSI Dashboard project.<br>
+                In addition, I mentored a summer intern who worked on the administrative portion of the application.
+            </div>
+        </div>
+        <hr>
+        <div class="cleared"></div>
+        <br>
+        
+        
+        <h5>Purpose</h5>
+        <p>
+            Tools like <a href="http://msdn.microsoft.com/en-us/vstudio/ff637362.aspx">TFS</a> provide large corporations with a seamless way to organize, plan, and execute their software development efforts.
+            Unfortunately, most project management tools focus on individual teams and team workflows, and neglect to include a simple way to aggregate all of a company's development metrics into a single view.
+            PSI Dashboard aims to fill this gap by providing a glanceable frontend that communicates the organization's development progress as a whole.
+        </p>
+        <br>
+        
+        
+        <h5>The PSI Concept</h5>
+        <p>
+            DuPont Pioneer organizes its development cadence into eight week (four sprint) chunks.  These chunks are known as Potentially Shippable Increments, or PSIs.
+            At the end of every PSI boundary, each development team is expected to have a releasable product that includes the features that have been under development for the past two months.
+        </p>
+        <p>
+            While the concept of a regular release schedule is hardly unique to Pioneer, the specific implementation and nomenclature of this process made working with third-party management tools awkward at best.
+        </p>
+        <br>
+        
+        
+        <h5>Interface</h5>
+        <p>To visually present the PSI concept, I chose to place each application's planned features into a zoom-enabled grid, with sequential PSIs forming a timeline along the X axis:</p>
+        <img src="images/psi-dashboard-screenshot-1.png" class="img-responsive demo-image">
+        <p>
+            The color of each feature is representative of the development team that has been assigned to that feature.
+            The colored bars on the left side of features and initiatives (Process Management, in this example) represent the overall status of the item.
+            The <br>small<i class="fa fa-link" style="margin-left: 4px; margin-right: 4px; font-size: .9em; color: #333"></i> icon in the corner of some features identifies that feature as having a dependency on another.
+        </p>
+        <p>Hovering over a particular feature brings up a contextual popup with more information about that particular item:</p>
+        <img src="images/psi-dashboard-screenshot-2.png" class="img-responsive demo-image">
+        <p>
+            Navigating the Dashboard is much like navigating Google Maps.
+            Clicking and dragging pans the body of the grid through the viewport, and the column and row headers slide to stay in sync.
+            Additionally, the entire view is zoom-enabled through the use of the mouse wheel:
+        </p>
+        <img src="images/psi-dashboard-screenshot-3.png" class="img-responsive demo-image">
+        <br>
+        <br>
+        <br>
+        
+    </div>
+</div>

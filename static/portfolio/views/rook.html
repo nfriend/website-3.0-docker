@@ -1,0 +1,81 @@
+<div header subtitle="Rook" class="header"></div>
+<div class="scroll-container">
+    <div class="portfolio-content">
+        
+        <p>
+            Rook is one of my oldest and most complex side projects.
+            Built as an homage to the "official" card game of Dordt college, Rook taught me a great deal about how to design software, and more importantly, how <em>not</em> to design software.
+        </p>
+        <br>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Dates:</b></div>
+            <div class="col-sm-10">July - August, 2012</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Technologies:</b></div>
+            <div class="col-sm-10">
+                <a href="http://jqueryui.com/">jQuery UI</a>,
+                <a href="http://php.net/">PHP</a>,
+                <a href="https://developer.mozilla.org/en-US/docs/WebSockets">WebSockets</a>
+            </div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Project type:</b></div>
+            <div class="col-sm-10">Personal project</div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Project URL:</b></div>
+            <div class="col-sm-10"><a href="http://nathanfriend.io/rook">nathanfriend.io/rook</a></div>
+        </div>
+        <div class="row info-row">
+            <div class="col-sm-2"><b>Source code:</b></div>
+            <div class="col-sm-10"><a href="https://github.com/nfriend/Rook">github.com/nfriend/Rook</a></div>
+        </div>
+        <hr>
+        <div class="cleared"></div>
+        <br>
+        
+        
+        <h5>The Lobby</h5>
+        <p>
+            The administrative details of grouping players into games, assigning teams, and synchronizing the start of the game was complicated enough to be its very own project.
+            If you find there's no one in the lobby (which is very likely, given this project's popularity), you can always simulate a full team by opening up four tabs and playing against yourself.
+            (<a href="http://en.wikipedia.org/wiki/Rook_(card_game)">Don't know how to play Rook?</a>)
+        </p>
+        <br>
+        
+        
+        <h5>The Cards</h5>
+        <p>
+            To make the game feel as genuine as possible, I took great pains to keep the game board visually appealing.
+            I bought a new deck of Rook cards and scanned every card in batches of four or five.
+            I then rounded the corners and outlined each card with a black border using <a href="http://www.gimp.org/">GIMP</a>.
+            The result was a set of images that look and feel much like a real deck of Rook cards:
+        </p>
+        <img class="rook-card" src="images/green-card.png">
+        <img class="rook-card" src="images/rook-card.png">
+        <img class="rook-card" src="images/card-back.png">
+        <div class="cleared"></div>
+        <br>
+        
+        
+        <h5>Validation</h5>
+        <p>
+            To be sure no one's cheating (i.e., not following suit), every action a player makes is validated server-side before relaying the move out to the other players.
+            However, much of the validation is also enforced on the front-end, through the UI, so it's quite rare that a player can make an invalid move in the first place.
+        </p>
+        <br>
+        
+        
+        <h5>Gameplay</h5>
+        <p>
+            After being assigned a team, each player is presented with his randomized hand, and the bidding process begins:
+        </p>
+        <img src="images/rook1.png" class="demo-image img-responsive bordered">
+        <p>After the bid has been won and the trump color and kitty selection have been finalized, the rest of the game proceeds according to standard trick-based rules:</p>
+        <img src="images/rook2.png" class="demo-image img-responsive bordered">
+        <br>
+        <br>
+        
+    </div>
+</div>
