@@ -29,7 +29,7 @@ else
         # -n --agree-tos --email hello@nathanfriend.io
 
         # Get SSL certs for all the domains we serve
-        certbot certonly --webroot -w /usr/share/nginx/html \ 
+        certbot certonly --test-cert --webroot -w /usr/share/nginx/html \ 
             -d nathanfriend.io -d www.nathanfriend.io -d nathanfriend.com -d www.nathanfriend.com \
             -d dev.nathanfriend.io -d dev.nathanfriend.com \
             -d bethany.and.nathanfriend.io -d www.bethany.and.nathanfriend.io -d bethany.and.nathanfriend.com -d www.bethany.and.nathanfriend.com \
