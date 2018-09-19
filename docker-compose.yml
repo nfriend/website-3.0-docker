@@ -43,7 +43,7 @@ services:
         networks:
             - inspirograph-network
         environment:
-            - USE_DEV_CERTS=true
+            - USE_DEV_CERTS=false
         restart: always
     php:
         image: inspirograph-php-image

@@ -1,6 +1,9 @@
 version: '3.7'
 
 services:
+    nginx:
+        environment:
+            - USE_DEV_CERTS=true
     mysql:
         ports:
             - '3306:3306'
