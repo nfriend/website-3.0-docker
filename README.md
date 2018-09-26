@@ -4,10 +4,97 @@ All configuration and deployment scripts needed to automate the deployment of my
 ## How to deploy
 
 1. If you haven't already, update the DNS entries of all `*.nathanfriend.(io|com)` domains to the server's new IP address.  This is necessary because the server will attempt to fetch new certificates from Let's Encrypt during startup.
+1. Open up the following (inbound) ports in the VM:
+  - 80 (HTTP)
+  - 443 (HTTPS)
+  - 22 (SSH)
+  - 18734 (Roggle websocket server)
+  - 9300 (Rook websocket server)
+  - 8089 (NodeChat websocket server)
+
 1. Install Node, Docker, Docker Compose, and git on the server
 2. Clone this repository on the server: `git clone https://github.com/nfriend/website-3.0-docker.git`
 3. Run `npm install` inside this repository
 4. Run `docker-compose up -d --build` inside this repository
+
+### Migrating stateful app data
+
+Most of the apps that run on this webserver are stateless and don't require any data migration.  However, there a few exceptions.  Here are instructions on how to move these apps with their data:
+
+#### Inspirograph
+
+Here's the high-level idea:
+
+- Export the current database as a `.sql` file from the old MySQL container on the old server
+- Copy the file into the new MySQL on the new server
+- Import the file into the new MySQL database
+
+Inspirograph consists of one MySQL database with one (very large) table.  To export the data from the old server, SSH into the MySQL container using:
+
+```bash
+docker exec -it <container-id> bash
+```
+
+Then, inside the MySQL container, run the following:
+
+```bash
+mysqldump -u root -p <root password here> inspirograph > inspirograph-backup.sql
+```
+
+Then, exit the container SSH session and copy the file from the container to the host using:
+
+```bash
+docker cp <container-id>:/path/to/inspirograph-backup.sql
+```
+
+Copy `inspirograph-backup.sql` to the new server.  Then, SSH into the new host machine and copy the file into the new MySQL container:
+
+```bash
+docker cp /path/to/inspirograph-backup.sql <container-id>:/inspirograph-backup.sql
+```
+
+Look at the logs of the MySQL container to get the MySQL `root` password:
+
+```bash
+docker logs <container-id>
+```
+
+The line in the logs output will look like this:
+
+```bash
+GENERATED ROOT PASSWORD: <password here>
+```
+
+Copy `inspirograph-backup.sql` into the new MySQL container:
+
+```bash
+docker cp inspirograph-backup.sql <container-id>:/tmp/inspirograph-backup.sql
+```
+
+Import the `.sql` into the new MySQL container by SSH'ing into the container (as described above), dropping the DEV version of the database (created when the container is created), and recreating the database:
+
+```bash
+mysql -u root -p
+
+mysql> DROP DATABASE inspirograph;
+mysql> CREATE DATABASE inspirograph;
+```
+
+Then, import the `.sql` file:
+
+```bash
+mysql -u root -p inspirograph < inspirograph-backup.sql
+```
+
+### Things to test after a deployment
+
+- That you can reach the static site
+- That the SSL certificate is valid and working
+- That Inspirograph can submit files to and retrieve files from the gallery
+- That WebSocket connections can be established for Rook, NodeChat, and Roggle
+- That the flash briefing `.json` files have been updated
+  - https://nathanfriend.io/flash-briefings/fortune-cookie.json
+  - https://nathanfriend.io/flash-briefings/oddly-specific-fortunes.json
 
 ## Notes to self on developing
 

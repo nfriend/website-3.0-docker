@@ -38,6 +38,13 @@ else
 
 fi
 
+# Make all our cron script executable
+# From https://superuser.com/a/91938/144803
+find /etc/periodic -type f -exec chmod +x {} +
+
+# Initialize any cron scripts
+run-parts /etc/periodic/daily
+
 # Stop the temporary instance
 nginx -s stop
 
