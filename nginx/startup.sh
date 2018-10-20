@@ -45,6 +45,9 @@ find /etc/periodic -type f -exec chmod +x {} +
 # Initialize any cron scripts
 run-parts /etc/periodic/daily
 
+# Start the cron daemon
+/usr/sbin/crond
+
 # Stop the temporary instance
 nginx -s stop
 
