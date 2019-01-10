@@ -84,6 +84,15 @@ services:
         networks:
             - inspirograph-network
         restart: always
+    rails-tutorial:
+        image: rails-tutorial-image
+        container_name: rails-tutorial-container
+        build:
+            context: .
+            dockerfile: ./rails-tutorial/Dockerfile
+        networks:
+            - inspirograph-network
+        restart: always
 
 volumes:
     inspirograph-mysql-volume:

@@ -9,7 +9,7 @@ then
 
     mkdir -p /etc/letsencrypt/live/nathanfriend.io
 
-    mv /temp/dev-certs/cert.pem /etc/letsencrypt/live/nathanfriend.io/cert.pem
+    mv /temp/dev-certs/fullchain.pem /etc/letsencrypt/live/nathanfriend.io/fullchain.pem
     mv /temp/dev-certs/privkey.pem /etc/letsencrypt/live/nathanfriend.io/privkey.pem
 else
 
