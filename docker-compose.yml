@@ -90,6 +90,11 @@ services:
         build:
             context: .
             dockerfile: ./rails-tutorial/Dockerfile
+        volumes:
+            - rails-tutorial-db-volume:/rails-tutorial/db/
+        environment:
+            - RAILS_SERVE_STATIC_FILES=true
+            - RAILS_TUTORIAL_RELATIVE_URL_ROOT=/rails-tutorial/
         networks:
             - inspirograph-network
         restart: always
@@ -98,6 +103,7 @@ volumes:
     inspirograph-mysql-volume:
     nginx-certs-volume:
     nginx-flash-briefings-volume:
+    rails-tutorial-db-volume:
 
 networks:
     inspirograph-network:
