@@ -3,10 +3,10 @@ FROM ruby:2.6.0
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 RUN mkdir /rails-tutorial
 WORKDIR /rails-tutorial
-COPY ./node_modules/@nathanfriend/rails-tutorial-toy-app/Gemfile /rails-tutorial/Gemfile
-COPY ./node_modules/@nathanfriend/rails-tutorial-toy-app/Gemfile.lock /rails-tutorial/Gemfile.lock
+COPY ./node_modules/@nathanfriend/rails-tutorial-sample-app/Gemfile /rails-tutorial/Gemfile
+COPY ./node_modules/@nathanfriend/rails-tutorial-sample-app/Gemfile.lock /rails-tutorial/Gemfile.lock
 RUN bundle install
-COPY ./node_modules/@nathanfriend/rails-tutorial-toy-app /rails-tutorial
+COPY ./node_modules/@nathanfriend/rails-tutorial-sample-app /rails-tutorial
 
 # # Add a script to be executed every time the container starts.
 # COPY ./rails-tutorial/entrypoint.sh /usr/bin/
