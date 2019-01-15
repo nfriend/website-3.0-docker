@@ -8,10 +8,10 @@ COPY ./node_modules/@nathanfriend/rails-tutorial-sample-app/Gemfile.lock /rails-
 RUN bundle install
 COPY ./node_modules/@nathanfriend/rails-tutorial-sample-app /rails-tutorial
 
-# # Add a script to be executed every time the container starts.
-# COPY ./rails-tutorial/entrypoint.sh /usr/bin/
-# RUN chmod +x /usr/bin/entrypoint.sh
-# ENTRYPOINT ["entrypoint.sh"]
+# Add a script to be executed every time the container starts.
+COPY ./rails-tutorial/entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
 
 EXPOSE 3000
 
