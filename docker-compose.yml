@@ -84,20 +84,20 @@ services:
         networks:
             - inspirograph-network
         restart: always
-    rails-tutorial:
-        image: rails-tutorial-image
-        container_name: rails-tutorial-container
-        build:
-            context: .
-            dockerfile: ./rails-tutorial/Dockerfile
-        volumes:
-            - rails-tutorial-db-volume:/rails-tutorial/db/
-        environment:
-            - RAILS_SERVE_STATIC_FILES=true
-            - RAILS_TUTORIAL_RELATIVE_URL_ROOT=/rails-tutorial/
-        networks:
-            - inspirograph-network
-        restart: always
+    # rails-tutorial:
+    #     image: rails-tutorial-image
+    #     container_name: rails-tutorial-container
+    #     build:
+    #         context: .
+    #         dockerfile: ./rails-tutorial/Dockerfile
+    #     volumes:
+    #         - rails-tutorial-db-volume:/rails-tutorial/db/
+    #     environment:
+    #         - RAILS_SERVE_STATIC_FILES=true
+    #         - RAILS_TUTORIAL_RELATIVE_URL_ROOT=/rails-tutorial/
+    #     networks:
+    #         - inspirograph-network
+    #     restart: always
 
 volumes:
     inspirograph-mysql-volume:
