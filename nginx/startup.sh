@@ -34,6 +34,7 @@ else
             -d dev.nathanfriend.io -d dev.nathanfriend.com \
             -d bethany.and.nathanfriend.io -d www.bethany.and.nathanfriend.io -d bethany.and.nathanfriend.com -d www.bethany.and.nathanfriend.com \
             -d workaround.nathanfriend.io \
+            -d workaround2.nathanfriend.io \
             -n --agree-tos --email hello@nathanfriend.io
     fi
 
