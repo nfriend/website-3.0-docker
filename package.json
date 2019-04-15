@@ -24,6 +24,6 @@
     "@nathanfriend/rook": "^1.0.2",
     "@nathanfriend/theremin": "^1.0.0",
     "@nathanfriend/webgl-chess": "^1.0.0",
-    "@nathanfriend/website-3.0": "^2.3.0"
+    "@nathanfriend/website-3.0": "^2.4.0"
   }
 }
