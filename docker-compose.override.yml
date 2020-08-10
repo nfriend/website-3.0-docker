@@ -1,0 +1,12 @@
+version: "2.4"
+
+services:
+  nginx:
+    volumes:
+      - type: bind
+        source: ./nginx/local
+        target: /etc/nginx
+
+  mysql:
+    ports:
+      - 3306:3306
