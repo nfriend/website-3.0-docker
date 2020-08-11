@@ -1,5 +1,11 @@
 # website-3.0-docker
 
+<a
+  href="https://gitlab.com/nfriend/website-3.0-docker/pipelines/latest"
+  target="_blank"><img
+  src="https://gitlab.com/nfriend/website-3.0-docker/badges/master/pipeline.svg"
+  alt="GitLab build status"></a>
+
 All configuration and deployment scripts needed to automate the deployment of my
 website via Docker.
 
