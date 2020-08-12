@@ -26,7 +26,7 @@ chmod 700 ~/.ssh
 echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
 chmod 644 ~/.ssh/known_hosts
 
-ssh ${SERVER_USER}@${SERVER_ADDR} <<EOF
+ssh -p ${SSH_PORT} ${SERVER_USER}@${SERVER_ADDR} <<EOF
 
   ##
   ## Clone the website-3.0-docker repo locally, if necessary
