@@ -1,111 +1,71 @@
-version: '3.7'
+version: "2.4"
 
 services:
-    nginx:
-        image: nginx-image
-        container_name: nginx-container
-        build: ./nginx
-        ports:
-            - '80:80'
-            - '443:443'
-            - '18734:18734'
-            - '9300:9300'
-            - '8089:8089'
-        volumes:
-            - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-            - nginx-certs-volume:/etc/letsencrypt/live
-            - ./nginx/logs:/etc/nginx/logs
-            - ./node_modules/@nathanfriend/website-3.0:/etc/nginx/html
-            - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
-            - ./node_modules/@nathanfriend/roggle:/etc/nginx/html/roggle
-            - ./node_modules/@nathanfriend/cooltojs:/etc/nginx/html/cooltojs
-            - ./node_modules/@nathanfriend/theremin:/etc/nginx/html/theremin
-            - ./node_modules/@nathanfriend/origins-host:/etc/nginx/html/origins
-            - ./node_modules/@nathanfriend/webgl-chess:/etc/nginx/html/webgl-chess
-            - ./node_modules/@nathanfriend/nfjs-demo:/etc/nginx/html/nfjs
-            - ./node_modules/@nathanfriend/mandelbrot:/etc/nginx/html/mandelbrot
-            - ./node_modules/@nathanfriend/fortune-flash-briefings/update-fortune-cookie.js:/etc/periodic/daily/update-fortune-cookie
-            - ./node_modules/@nathanfriend/fortune-flash-briefings/update-oddly-specific-fortunes.js:/etc/periodic/daily/update-oddly-specific-fortunes
-            - nginx-flash-briefings-volume:/etc/nginx/html/flash-briefings
-            - ./node_modules/@nathanfriend/rook:/etc/nginx/html/rook
-            - ./static/skills:/etc/nginx/html/skills
-            - ./static/ahholyjesus:/etc/nginx/html/ahholyjesus
-            - ./static/probe:/etc/nginx/html/probe
-            - ./static/site_archive:/etc/nginx/html/site_archive
-            - ./static/WordCloud:/etc/nginx/html/WordCloud
-            - ./static/wedding:/etc/nginx/html/wedding
-            - ./static/speller:/etc/nginx/html/speller
-            - ./static/portfolio:/etc/nginx/html/portfolio
-            - ./static/NodeChat:/etc/nginx/html/NodeChat
-            - ./static/battleship:/etc/nginx/html/battleship
-            - ./static/rookkeeper:/etc/nginx/html/rookkeeper
-            - ./static/battleship.pdf:/etc/nginx/html/battleship.pdf
-            - ./static/LegoGitLabTanukiInstructions.pdf:/etc/nginx/html/LegoGitLabTanukiInstructions.pdf
-        networks:
-            - inspirograph-network
-        environment:
-            - USE_DEV_CERTS=false
-        restart: always
-    php:
-        image: inspirograph-php-image
-        container_name: inspirograph-php-container
-        build: ./php
-        volumes:
-            - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
-            - ./node_modules/@nathanfriend/rook:/etc/nginx/html/rook
-            - ./static/site_archive:/etc/nginx/html/site_archive
-        networks:
-            - inspirograph-network
-        restart: always
-    mysql:
-        image: inspirograph-mysql-image
-        container_name: inspirograph-mysql-container
-        build: ./mysql
-        volumes:
-            - ./mysql/conf:/etc/mysql/conf.d
-            - inspirograph-mysql-volume:/var/lib/mysql
-        networks:
-            - inspirograph-network
-        restart: always
-    roggle-server:
-        image: roggle-server-image
-        container_name: roggle-server-container
-        build:
-            context: .
-            dockerfile: ./roggle-server/Dockerfile
-        networks:
-            - inspirograph-network
-        restart: always
-    nodechat-server:
-        image: nodechat-server-image
-        container_name: nodechat-server-container
-        build:
-            context: .
-            dockerfile: ./nodechat-server/Dockerfile
-        networks:
-            - inspirograph-network
-        restart: always
-    # rails-tutorial:
-    #     image: rails-tutorial-image
-    #     container_name: rails-tutorial-container
-    #     build:
-    #         context: .
-    #         dockerfile: ./rails-tutorial/Dockerfile
-    #     volumes:
-    #         - rails-tutorial-db-volume:/rails-tutorial/db/
-    #     environment:
-    #         - RAILS_SERVE_STATIC_FILES=true
-    #         - RAILS_TUTORIAL_RELATIVE_URL_ROOT=/rails-tutorial/
-    #     networks:
-    #         - inspirograph-network
-    #     restart: always
+  nginx:
+    image: nginx:1.19.1-alpine
+    container_name: nginx-container
+    ports:
+      - 80:80
+      - 443:443
+      - 18734:18734
+      - 9300:9300
+      - 8089:8089
+    volumes:
+      - ./node_modules/@nathanfriend/website-3.0:/etc/nginx/html
+      - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
+      - ./node_modules/@nathanfriend/roggle:/etc/nginx/html/roggle
+      - ./node_modules/@nathanfriend/cooltojs:/etc/nginx/html/cooltojs
+      - ./node_modules/@nathanfriend/theremin:/etc/nginx/html/theremin
+      - ./node_modules/@nathanfriend/origins-host:/etc/nginx/html/origins
+      - ./node_modules/@nathanfriend/webgl-chess:/etc/nginx/html/webgl-chess
+      - ./node_modules/@nathanfriend/nfjs-demo:/etc/nginx/html/nfjs
+      - ./node_modules/@nathanfriend/mandelbrot:/etc/nginx/html/mandelbrot
+      - ./node_modules/@nathanfriend/rook:/etc/nginx/html/rook
+      - ./static/skills:/etc/nginx/html/skills
+      - ./static/ahholyjesus:/etc/nginx/html/ahholyjesus
+      - ./static/probe:/etc/nginx/html/probe
+      - ./static/site_archive:/etc/nginx/html/site_archive
+      - ./static/WordCloud:/etc/nginx/html/WordCloud
+      - ./static/wedding:/etc/nginx/html/wedding
+      - ./static/speller:/etc/nginx/html/speller
+      - ./static/portfolio:/etc/nginx/html/portfolio
+      - ./static/NodeChat:/etc/nginx/html/NodeChat
+      - ./static/battleship:/etc/nginx/html/battleship
+      - ./static/rookkeeper:/etc/nginx/html/rookkeeper
+      - ./static/battleship.pdf:/etc/nginx/html/battleship.pdf
+      - ./static/LegoGitLabTanukiInstructions.pdf:/etc/nginx/html/LegoGitLabTanukiInstructions.pdf
+
+  php:
+    image: inspirograph-php-image
+    container_name: inspirograph-php-container
+    build: ./php
+    volumes:
+      - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
+      - ./node_modules/@nathanfriend/rook:/etc/nginx/html/rook
+      - ./static/site_archive:/etc/nginx/html/site_archive
+
+  mysql:
+    image: inspirograph-mysql-image
+    container_name: inspirograph-mysql-container
+    build: ./mysql
+    volumes:
+      - ./mysql/conf:/etc/mysql/conf.d
+      - inspirograph-mysql-volume:/var/lib/mysql
+
+  roggle-server:
+    image: roggle-server-image
+    container_name: roggle-server-container
+    build:
+      context: .
+      dockerfile: ./roggle-server/Dockerfile
+
+  nodechat-server:
+    image: nodechat-server-image
+    container_name: nodechat_server
+    build:
+      context: .
+      dockerfile: ./nodechat-server/Dockerfile
 
 volumes:
-    inspirograph-mysql-volume:
-    nginx-certs-volume:
-    nginx-flash-briefings-volume:
-    rails-tutorial-db-volume:
-
-networks:
-    inspirograph-network:
-        driver: bridge
+  inspirograph-mysql-volume:
+  nginx-flash-briefings-volume:

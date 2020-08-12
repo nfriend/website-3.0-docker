@@ -1,0 +1,31 @@
+default:
+  image: node:12.18.3
+
+stages:
+  - test
+  - deploy
+  - dast
+
+include:
+  - template: Dependency-Scanning.gitlab-ci.yml
+  - template: SAST.gitlab-ci.yml
+  - template: DAST.gitlab-ci.yml
+
+variables:
+  DAST_WEBSITE: https://${SERVER_ADDR}
+
+deploy:
+  stage: deploy
+  script:
+    - scripts/deploy.sh
+  environment:
+    name: production
+    url: https://${SERVER_ADDR}
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+dast:
+  needs:
+    - deploy
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
