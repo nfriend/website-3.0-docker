@@ -15,6 +15,7 @@ variables:
   DAST_WEBSITE: https://${SERVER_ADDR}
 
 deploy:
+  needs: []
   stage: deploy
   script:
     - scripts/deploy.sh
