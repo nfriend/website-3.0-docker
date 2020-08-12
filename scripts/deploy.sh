@@ -37,6 +37,11 @@ ssh -p ${SSH_PORT} ${SERVER_USER}@${SERVER_ADDR} <<EOF
   fi
 
   ##
+  ## Navigate inside the repo
+  ##
+  cd /home/${SERVER_USER}/website-3.0-docker
+
+  ##
   ## Update the local repo
   ##
   git checkout master
@@ -46,18 +51,15 @@ ssh -p ${SSH_PORT} ${SERVER_USER}@${SERVER_ADDR} <<EOF
   ##
   ## Take down any current services
   ##
-  cd /home/${SERVER_USER}/website-3.0-docker
   docker-compose down
 
   ##
   ## Install all dependencies
   ##
-  cd /home/${SERVER_USER}/website-3.0-docker
   npm install
 
   ##
   ## Bring up all the services
   ##
-  cd /home/${SERVER_USER}/website-3.0-docker
   docker-compose up -d
 EOF
