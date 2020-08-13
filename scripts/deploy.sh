@@ -54,6 +54,22 @@ ssh -p ${SSH_PORT} ${SERVER_USER}@${SERVER_ADDR} <<EOF
   docker-compose down
 
   ##
+  ## Copy temporary SSL certificates
+  ##
+  rsync --archive \
+        --verbose \
+        --ignore-existing \
+        --human-readable \
+        nginx/deployed/temp.cert.pem \
+        /home/${SERVER_USER}/website-3.0-docker/certbot/conf/live/${SERVER_ADDR}/fullchain.pem
+  rsync --archive \
+        --verbose \
+        --ignore-existing \
+        --human-readable \
+        nginx/deployed/temp.key.pem \
+        /home/${SERVER_USER}/website-3.0-docker/certbot/conf/live/${SERVER_ADDR}/privkey.pem
+
+  ##
   ## Install all dependencies
   ##
   npm install
