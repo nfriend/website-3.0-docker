@@ -62,7 +62,7 @@ ssh -p ${SSH_PORT} ${SERVER_USER}@${SERVER_ADDR} <<EOF
         /home/${SERVER_USER}/website-3.0-docker/certbot/conf/live/${SERVER_ADDR}/privkey.pem
 
   echo "Installing all dependencies.."
-  npm install
+  npm update
 
   echo "Bringing up all the services..."
   docker-compose -f docker-compose.yml -f docker-compose.production.yml up -d
