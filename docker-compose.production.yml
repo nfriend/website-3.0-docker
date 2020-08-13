@@ -28,8 +28,8 @@ services:
   mysql:
     restart: always
 
-  roggle_server:
+  roggle-server:
     restart: always
 
-  nodechat_server:
+  nodechat-server:
     restart: always
