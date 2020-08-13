@@ -37,7 +37,7 @@ ssh -p ${SSH_PORT} ${SERVER_USER}@${SERVER_ADDR} <<EOF
   fi
 
   ##
-  ## Navigate inside the repo
+  ## Navigate to the local repo
   ##
   cd /home/${SERVER_USER}/website-3.0-docker
 

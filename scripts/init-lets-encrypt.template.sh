@@ -3,6 +3,9 @@
 # Based on the script found in
 # https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71
 
+# Navigate to the working directory this script requires
+pushd /home/gitlabci/website-3.0-docker
+
 domains=(
   nathanfriend.io
   nathanfriend.com
@@ -60,3 +63,7 @@ echo "### Reloading nginx ..."
 docker-compose -f docker-compose.yml \
                -f docker-compose.production.yml \
                exec nginx nginx -s reload
+
+
+# Navigate back to the user's original working directory
+popd
