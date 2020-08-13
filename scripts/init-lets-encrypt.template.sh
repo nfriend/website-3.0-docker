@@ -19,7 +19,7 @@ domains=(
   www.bethany.and.nathanfriend.io
 )
 email="contact@nathanfriend.io"
-staging=1 # Set to 1 if you're testing your setup to avoid hitting request limits
+staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
 rsa_key_size=4096
 
 echo "### Deleting dummy certificate for $domains ..."
