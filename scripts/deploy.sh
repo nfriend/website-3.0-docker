@@ -56,6 +56,8 @@ ssh -p ${SSH_PORT} ${SERVER_USER}@${SERVER_ADDR} <<EOF
   ##
   ## Copy temporary SSL certificates
   ##
+  mkdir -p /home/${SERVER_USER}/website-3.0-docker/certbot/www
+  mkdir -p /home/${SERVER_USER}/website-3.0-docker/certbot/conf/live/${SERVER_ADDR}
   rsync --archive \
         --verbose \
         --ignore-existing \

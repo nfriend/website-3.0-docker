@@ -22,10 +22,6 @@ email="contact@nathanfriend.io"
 staging=1 # Set to 1 if you're testing your setup to avoid hitting request limits
 rsa_key_size=4096
 
-echo '### Creating required directories'
-mkdir -p /home/gitlabci/website-3.0-docker/certbot/www
-mkdir -p /home/gitlabci/website-3.0-docker/certbot/conf/live/$domains
-
 echo "### Deleting dummy certificate for $domains ..."
 docker-compose -f docker-compose.yml \
                -f docker-compose.production.yml \
