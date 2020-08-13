@@ -13,16 +13,16 @@
   },
   "homepage": "https://github.com/nfriend/website-3.0-docker#readme",
   "dependencies": {
-    "@nathanfriend/cooltojs": "^1.0.2",
-    "@nathanfriend/fortune-flash-briefings": "^1.0.2",
-    "@nathanfriend/inspirograph": "^1.1.3",
-    "@nathanfriend/mandelbrot": "^1.0.0",
-    "@nathanfriend/nfjs-demo": "^1.0.0",
-    "@nathanfriend/origins-host": "^1.0.0",
-    "@nathanfriend/roggle": "^1.0.2",
-    "@nathanfriend/rook": "^1.0.2",
-    "@nathanfriend/theremin": "^1.0.0",
-    "@nathanfriend/webgl-chess": "^1.0.0",
+    "@nathanfriend/cooltojs": "*",
+    "@nathanfriend/fortune-flash-briefings": "*",
+    "@nathanfriend/inspirograph": "*",
+    "@nathanfriend/mandelbrot": "*",
+    "@nathanfriend/nfjs-demo": "*",
+    "@nathanfriend/origins-host": "*",
+    "@nathanfriend/roggle": "*",
+    "@nathanfriend/rook": "*",
+    "@nathanfriend/theremin": "*",
+    "@nathanfriend/webgl-chess": "*",
     "@nathanfriend/website-3.0": "*"
   }
 }
