@@ -51,7 +51,7 @@ ssh -p ${SSH_PORT} ${SERVER_USER}@${SERVER_ADDR} <<EOF
   ##
   ## Take down any current services
   ##
-  docker-compose down
+  docker-compose -f docker-compose.yml -f docker-compose.production.yml down
 
   ##
   ## Copy temporary SSL certificates
@@ -79,5 +79,5 @@ ssh -p ${SSH_PORT} ${SERVER_USER}@${SERVER_ADDR} <<EOF
   ##
   ## Bring up all the services
   ##
-  docker-compose up -d
+  docker-compose -f docker-compose.yml -f docker-compose.production.yml up -d
 EOF
