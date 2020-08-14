@@ -1,33 +1,77 @@
 # website-3.0-docker
 
-<a
-  href="https://gitlab.com/nfriend/website-3.0-docker/pipelines/latest"
+<a href="https://gitlab.com/nfriend/website-3.0-docker/pipelines/latest"
   target="_blank"><img
   src="https://gitlab.com/nfriend/website-3.0-docker/badges/master/pipeline.svg"
   alt="GitLab build status"></a>
 
-All configuration and deployment scripts needed to automate the deployment of my
-website via Docker.
+All configuration and deployment scripts needed to automate the deployment of
+[my website](https://nathanfriend.io/) via [Docker](https://www.docker.com/).
 
-## How to deploy
+[View the source on GitLab.](https://gitlab.com/nfriend/website-3.0-docker)
+
+## How to deploy to a new server
 
 1. If you haven't already, update the DNS entries of all
-   `*.nathanfriend.(io|com)` domains to the server's new IP address. This is
-   necessary because the server will attempt to fetch new certificates from
-   Let's Encrypt during startup.
+   `*.nathanfriend.(io|com)` domains to the server's new IP address.
 1. Open up the following (inbound) ports in the VM:
 
-- 80 (HTTP)
-- 443 (HTTPS)
-- 685 (SSH)
-- 18734 (Roggle websocket server)
-- 9300 (Rook websocket server)
-- 8089 (NodeChat websocket server)
+   - 80 (HTTP)
+   - 443 (HTTPS)
+   - 685 (SSH)
+   - 18734 (Roggle websocket server)
+   - 9300 (Rook websocket server)
+   - 8089 (NodeChat websocket server)
 
 1. Install Node, Docker, Docker Compose, and git on the server
-2. Clone this repository on the server: `git clone https://github.com/nfriend/website-3.0-docker.git`
-3. Run `npm install` inside this repository
-4. Run `docker-compose up -d --build` inside this repository
+1. Create a new user on the server named `gitlabci`
+1. Allow the `gitlabci` user to run Docker commands without `sudo`:
+   https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
+1. Give the user SSH access and update this project's CI/CD variables with the
+   updated values (see the [**Variables**](#variables) section below),
+   specifically:
+   - `SSH_PRIVATE_KEY`
+   - `SSH_PORT`
+   - `SSH_KNOWN_HOSTS`
+     - This documentation page explains how to generate this value:
+       https://docs.gitlab.com/ee/ci/ssh_keys/#verifying-the-ssh-host-keys
+1. Run this project's pipeline
+
+At this point in time, the pipeline _should_ automatically deploy the
+application to [nathanfriend.io](https://nathanfriend.io). Although I'm almost
+positive I've forgotten a few steps, so good luck 😅
+
+However, visiting https://nathanfriend.io will result in a certificate error.
+This is because during its first deployment, nginx uses some
+[fake](./nginx/deployed/temp.cert.pem)
+[certificates](./nginx/deployed/temp.key.pem) in order to start the server
+before real certificates are fetched from [Let's
+Encrypt](https://letsencrypt.org/) (using the [Certbot Docker
+container](https://certbot.eff.org/docs/install.html#running-with-docker)).
+
+To fetch real certificates, SSH into the server and run
+[`scripts/init-lets-encrypt.template.sh`](./scripts/init-lets-encrypt.template.sh).
+This script will request certificats from Let's Encrypt, save the certificats to
+the server, and reload nginx. After this script finishes successfully, you
+should no longer receive a certificate error when browsing to
+https://nathanfriend.io.
+
+**Note:** This script only needs to be run **once**. Subsequent deploys will
+reuse these certificates, and renewals are handled automatically. Also, this
+script must be run while the Docker services are up and running.
+
+### Variables
+
+In order for this project's GitLab pipeline to succeed, a few environment
+variables are required:
+
+| Variable name   | Description                                                                                                                                           |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SERVER_ADDR     | Main domain of the site, without subdomains or protocol. Should be set to `nathanfriend.io` unless the site is moved somewhere else in the future.    |
+| SERVER_USER     | Username of the server user used by the GitLab pipeline to SSH into the server and execute deployments. This project assumes this user is `gitlabci`. |
+| SSH_PRIVATE_KEY | The SSH private key that `SERVER_USER` can use to SSH into the server                                                                                 |
+| SSH_PORT        | The port used by `SERVER_USER` when SSH'ing                                                                                                           |
+| SSH_KNOWN_HOSTS | See https://docs.gitlab.com/ee/ci/ssh_keys/#verifying-the-ssh-host-keys                                                                               |
 
 ### Migrating stateful app data
 
@@ -83,6 +127,8 @@ The line in the logs output will look like this:
 GENERATED ROOT PASSWORD: <password here>
 ```
 
+Alternatively, the password can be found in KeePass.
+
 Copy `inspirograph-backup.sql` into the new MySQL container:
 
 ```bash
@@ -115,6 +161,8 @@ mysql -u root -p inspirograph < inspirograph-backup.sql
 - That the flash briefing `.json` files have been updated
   - https://nathanfriend.io/flash-briefings/fortune-cookie.json
   - https://nathanfriend.io/flash-briefings/oddly-specific-fortunes.json
+  - _Note: I haven't gotten around to re-implementing these since refactoring
+    this project to auto-deploy using GitLab pipelines_
 
 ## Notes to self on developing
 
@@ -127,7 +175,8 @@ new development will occur on these repositories.
 ### DNS
 
 During development, you will need to update your `hosts` file
-(`C:\Windows\System32\drivers\etc\hosts`) with the following entries:
+(`C:\Windows\System32\drivers\etc\hosts` or `/etc/hosts`) with the following
+entries:
 
 ```
 127.0.0.1   nathanfriend.io
@@ -150,12 +199,9 @@ During development, you will need to update your `hosts` file
 
 To run the Docker network locally, run at the root of this repository:
 
-`docker-compose -f .\docker-compose.yml -f .\docker-compose.dev.yml up -d --build`
+`docker-compose up -d --build`
 
-This will run the Docker network with some development options enabled. Although
-in most cases, it suffices to run the normal command, `docker-compose up -d --build`.
-
-To take down the network and delete the data volume:
+To take down the network and delete the Inspirograph data volume:
 
 `docker-compose down; docker volume rm website-30-docker_inspirograph-mysql-volume`
 
@@ -165,12 +211,3 @@ Add the following projects:
 
 - ldraw-visualizer
 - Deck of Cards
-
-The last time I took the server down and back up, `nginx` didn't start - it
-complained about not being able to access the existing certs. I had to delete
-the named volume that stores the certs in order to get `nginx` to start. Not
-sure if this was a one-time thing or if there's a problem with how I'm
-specifying the volume that `nginx` uses to store its certs. Don't make this
-mistake too much - Let's Encrypt has [rate
-limits](https://letsencrypt.org/docs/rate-limits/) that you'll hit if you try
-this too many times in a short period of time.
