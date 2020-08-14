@@ -4,7 +4,7 @@ default:
 stages:
   - test
   - deploy
-  - dast
+  - post deploy
 
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
@@ -26,7 +26,16 @@ deploy:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 dast:
+  stage: post deploy
   needs:
     - deploy
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+automated tests:
+  stage: post deploy
+  needs:
+    - deploy
+  trigger: nfriend/website-3.0-tests
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
