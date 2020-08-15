@@ -32,8 +32,6 @@ deploy:
 
 regenerate jsons:
   stage: skills
-  needs:
-    - deploy
   before_script:
     - npm update --cache .npm --prefer-offline
   cache:
@@ -49,14 +47,8 @@ regenerate jsons:
 dast:
   <<: *default_rules
   stage: post deploy
-  needs:
-    - deploy
-    - regenerate jsons
 
 automated tests:
   <<: *default_rules
   stage: post deploy
-  needs:
-    - deploy
-    - regenerate jsons
   trigger: nfriend/website-3.0-tests
