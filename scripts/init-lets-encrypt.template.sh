@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Note: This script will be executed on the production server.
+
 # Based on the script found in
 # https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71
 

@@ -34,6 +34,7 @@ services:
       - ./static/rookkeeper:/etc/nginx/html/rookkeeper
       - ./static/battleship.pdf:/etc/nginx/html/battleship.pdf
       - ./static/LegoGitLabTanukiInstructions.pdf:/etc/nginx/html/LegoGitLabTanukiInstructions.pdf
+      - ./flash-briefings:/etc/nginx/html/flash-briefings
 
   php:
     image: inspirograph-php-image
