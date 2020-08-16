@@ -21,8 +21,8 @@ variables:
 
 deploy:
   <<: *default_rules
-  needs: []
   stage: deploy
+  needs: []
   script:
     - source ./scripts/setup-ssh.sh
     - >
@@ -34,6 +34,7 @@ deploy:
 
 regenerate jsons:
   stage: skills
+  needs: []
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
