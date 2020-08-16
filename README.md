@@ -65,13 +65,14 @@ script must be run while the Docker services are up and running.
 In order for this project's GitLab pipeline to succeed, a few environment
 variables are required:
 
-| Variable name   | Description                                                                                                                                           |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SERVER_ADDR     | Main domain of the site, without subdomains or protocol. Should be set to `nathanfriend.io` unless the site is moved somewhere else in the future.    |
-| SERVER_USER     | Username of the server user used by the GitLab pipeline to SSH into the server and execute deployments. This project assumes this user is `gitlabci`. |
-| SSH_PRIVATE_KEY | The SSH private key that `SERVER_USER` can use to SSH into the server                                                                                 |
-| SSH_PORT        | The port used by `SERVER_USER` when SSH'ing                                                                                                           |
-| SSH_KNOWN_HOSTS | See https://docs.gitlab.com/ee/ci/ssh_keys/#verifying-the-ssh-host-keys                                                                               |
+| Variable name          | Description                                                                                                                                                                                                                                      |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| SERVER_ADDR            | Main domain of the site, without subdomains or protocol. Should be set to `nathanfriend.io` unless the site is moved somewhere else in the future.                                                                                               |
+| SERVER_USER            | Username of the server user used by the GitLab pipeline to SSH into the server and execute deployments. This project assumes this user is `gitlabci`.                                                                                            |
+| SSH_PRIVATE_KEY        | The SSH private key that `SERVER_USER` can use to SSH into the server                                                                                                                                                                            |
+| SSH_PORT               | The port used by `SERVER_USER` when SSH'ing                                                                                                                                                                                                      |
+| SSH_KNOWN_HOSTS        | See https://docs.gitlab.com/ee/ci/ssh_keys/#verifying-the-ssh-host-keys                                                                                                                                                                          |
+| REGENERATE_SKILL_JSONS | Optional. If provided, regenerates and deploys the JSON files that support the Alexa flash briefing skills (and does _not_ perform the normal deploy to https://nathanfriend.io). See the [**Flash briefings**](#flash-briefings) section below. |
 
 ### Migrating stateful app data
 
@@ -152,6 +153,18 @@ Then, import the `.sql` file:
 mysql -u root -p inspirograph < inspirograph-backup.sql
 ```
 
+### Flash briefings
+
+In order to support the [Fortune
+Cookie](https://www.amazon.ca/Nathan-Friend-Fortune-Cookie/dp/B07DMYQPTS) and
+[Oddly Specific Fortunes](https://www.amazon.com/gp/product/B07DNTS3MP) Alexa
+flash briefings, the JSON files hosted at
+https://nathanfriend.io/flash-briefings/fortune-cookie.json and
+https://nathanfriend.io/flash-briefings/oddly-specific-fortunes.json are
+regenerated each day (at 3:00 AM Eastern time). This is done through a scheduled
+pipeline in this project with the `REGENERATE_SKILL_JSONS` environment variable
+set to `true`.
+
 ### Things to test after a deployment
 
 - That you can reach the static site
@@ -161,8 +174,10 @@ mysql -u root -p inspirograph < inspirograph-backup.sql
 - That the flash briefing `.json` files have been updated
   - https://nathanfriend.io/flash-briefings/fortune-cookie.json
   - https://nathanfriend.io/flash-briefings/oddly-specific-fortunes.json
-  - _Note: I haven't gotten around to re-implementing these since refactoring
-    this project to auto-deploy using GitLab pipelines_
+
+Most of these tests are now automated after each deploy through a downstream
+pipeline in the
+[`website-3.0-tests`](https://gitlab.com/nfriend/website-3.0-tests/) project.
 
 ## Notes to self on developing
 
