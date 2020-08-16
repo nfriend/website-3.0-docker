@@ -25,7 +25,9 @@ deploy:
   stage: deploy
   script:
     - source ./scripts/setup-ssh.sh
-    - ssh -p $SSH_PORT $SERVER_USER@$SERVER_ADDR 'bash -s' < ./scripts/deploy.sh
+    - >
+      ssh -p $SSH_PORT $SERVER_USER@$SERVER_ADDR
+      "SERVER_USER=${SERVER_USER} SERVER_ADDR=${SERVER_ADDR} bash -s " < ./scripts/deploy.sh
   environment:
     name: production
     url: https://${SERVER_ADDR}
