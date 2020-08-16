@@ -26,7 +26,7 @@ deploy:
   before_script:
     - scripts/setup-ssh.sh
   script:
-    - ssh -p ${SSH_PORT} ${SERVER_USER}@${SERVER_ADDR} scripts/deploy.sh
+    - ssh -p $SSH_PORT $SERVER_USER@$SERVER_ADDR scripts/deploy.sh
   environment:
     name: production
     url: https://${SERVER_ADDR}
