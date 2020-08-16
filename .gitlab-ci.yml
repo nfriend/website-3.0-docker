@@ -24,7 +24,7 @@ deploy:
   needs: []
   stage: deploy
   script:
-    - source scripts/setup-ssh.sh
+    - source ./scripts/setup-ssh.sh
     - ssh -p $SSH_PORT $SERVER_USER@$SERVER_ADDR scripts/deploy.sh
   environment:
     name: production
@@ -38,7 +38,7 @@ regenerate jsons:
       - .npm
   script:
     - npm update --cache .npm --prefer-offline
-    - source scripts/setup-ssh.sh
+    - source ./scripts/setup-ssh.sh
     - scripts/regenerate-skill-jsons.sh
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $REGENERATE_SKILL_JSONS
