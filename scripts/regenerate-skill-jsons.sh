@@ -11,7 +11,7 @@ echo "Result:"
 cat oddly-specific-fortunes.json
 
 echo "Copying fortune-cookie.json to server..."
-scp -P ${SSH_PORT} fortune-cookie.json ${SERVER_USER}@${SERVER_ADDR}:/home/${SERVER_USER}/website-3.0/flash-briefings/
+scp -P ${SSH_PORT} fortune-cookie.json ${SERVER_USER}@${SERVER_ADDR}:/home/${SERVER_USER}/website-3.0-docker/flash-briefings/
 
 echo "Copying oddly-specific-fortunes.json to server..."
-scp -P ${SSH_PORT} oddly-specific-fortunes.json ${SERVER_USER}@${SERVER_ADDR}:/home/${SERVER_USER}/website-3.0/flash-briefings/
+scp -P ${SSH_PORT} oddly-specific-fortunes.json ${SERVER_USER}@${SERVER_ADDR}:/home/${SERVER_USER}/website-3.0/-docker/flash-briefings/
