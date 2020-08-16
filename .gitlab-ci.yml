@@ -23,8 +23,9 @@ deploy:
   <<: *default_rules
   needs: []
   stage: deploy
-  script:
+  before_script:
     - scripts/setup-ssh.sh
+  script:
     - ssh -p ${SSH_PORT} ${SERVER_USER}@${SERVER_ADDR} scripts/deploy.sh
   environment:
     name: production
@@ -33,13 +34,13 @@ deploy:
 regenerate jsons:
   stage: skills
   before_script:
+    - scripts/setup-ssh.sh
     - npm update --cache .npm --prefer-offline
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
       - .npm
   script:
-    - scripts/setup-ssh.sh
     - scripts/regenerate-skill-jsons.sh
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $REGENERATE_SKILL_JSONS
