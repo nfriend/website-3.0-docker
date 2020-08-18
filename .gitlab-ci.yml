@@ -48,7 +48,7 @@ regenerate jsons:
 
 template:
   <<: *default_rules
-  stage: post-deploy
+  stage: post deploy
   needs:
     - deploy
   script:
