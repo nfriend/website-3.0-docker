@@ -46,6 +46,17 @@ regenerate jsons:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $REGENERATE_SKILL_JSONS
 
+template:
+  <<: *default_rules
+  stage: post-deploy
+  needs:
+    - deploy
+  script:
+    - source ./scripts/setup-ssh.sh
+    - >
+      ssh -p $SSH_PORT $SERVER_USER@$SERVER_ADDR
+      "SERVER_USER=${SERVER_USER} SERVER_ADDR=${SERVER_ADDR} bash -s " < ./scripts/template.sh
+
 dast:
   <<: *default_rules
   stage: post deploy
