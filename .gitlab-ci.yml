@@ -61,6 +61,10 @@ dast:
   <<: *default_rules
   stage: post deploy
 
+dast_unlicensed:
+  <<: *default_rules
+  stage: post deploy
+
 automated tests:
   <<: *default_rules
   stage: post deploy
