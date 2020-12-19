@@ -14,10 +14,10 @@ stages:
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
   - template: SAST.gitlab-ci.yml
-  - template: DAST.gitlab-ci.yml
+  # - template: DAST.gitlab-ci.yml
 
-variables:
-  DAST_WEBSITE: https://${SERVER_ADDR}
+# variables:
+#   DAST_WEBSITE: https://${SERVER_ADDR}
 
 deploy:
   <<: *default_rules
@@ -57,13 +57,13 @@ template:
       ssh -p $SSH_PORT $SERVER_USER@$SERVER_ADDR
       "SERVER_USER=${SERVER_USER} SERVER_ADDR=${SERVER_ADDR} bash -s " < ./scripts/template.sh
 
-dast:
-  <<: *default_rules
-  stage: post deploy
+# dast:
+#   <<: *default_rules
+#   stage: post deploy
 
-dast_unlicensed:
-  <<: *default_rules
-  stage: post deploy
+# dast_unlicensed:
+#   <<: *default_rules
+#   stage: post deploy
 
 automated tests:
   <<: *default_rules
