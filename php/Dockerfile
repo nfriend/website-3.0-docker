@@ -2,7 +2,7 @@ FROM php:fpm
 
 EXPOSE 9300
 
-# Enable the mysqli extension (for Inspirograph)
+# Enable the mysqli extension (for Inspiral Web)
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 # Enable the socket extension (for Rook)

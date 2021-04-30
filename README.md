@@ -80,7 +80,7 @@ Most of the apps that run on this webserver are stateless and don't require any
 data migration. However, there a few exceptions. Here are instructions on how to
 move these apps with their data:
 
-#### Inspirograph
+#### Inspiral Web
 
 Here's the high-level idea:
 
@@ -89,7 +89,7 @@ Here's the high-level idea:
 - Copy the file into the new MySQL on the new server
 - Import the file into the new MySQL database
 
-Inspirograph consists of one MySQL database with one (very large) table. To
+Inspiral Web consists of one MySQL database with one (very large) table. To
 export the data from the old server, SSH into the MySQL container using:
 
 ```bash
@@ -169,7 +169,7 @@ set to `true`.
 
 - That you can reach the static site
 - That the SSL certificate is valid and working
-- That Inspirograph can submit files to and retrieve files from the gallery
+- That Inspiral Web can submit files to and retrieve files from the gallery
 - That WebSocket connections can be established for Rook, NodeChat, and Roggle
 - That the flash briefing `.json` files have been updated
   - https://nathanfriend.io/flash-briefings/fortune-cookie.json
@@ -216,7 +216,7 @@ To run the Docker network locally, run at the root of this repository:
 
 `docker-compose up -d --build`
 
-To take down the network and delete the Inspirograph data volume:
+To take down the network and delete the Inspiral Web data volume:
 
 `docker-compose down; docker volume rm website-30-docker_inspirograph-mysql-volume`
 

@@ -1,4 +1,4 @@
-version: "2.4"
+version: '2.4'
 
 services:
   nginx:
@@ -12,7 +12,7 @@ services:
       - 8089:8089
     volumes:
       - ./node_modules/@nathanfriend/website-3.0:/etc/nginx/html
-      - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
+      - ./node_modules/@nathanfriend/inspiral-web:/etc/nginx/html/inspiral-web
       - ./node_modules/@nathanfriend/roggle:/etc/nginx/html/roggle
       - ./node_modules/@nathanfriend/cooltojs:/etc/nginx/html/cooltojs
       - ./node_modules/@nathanfriend/theremin:/etc/nginx/html/theremin
@@ -41,7 +41,7 @@ services:
     container_name: inspirograph-php-container
     build: ./php
     volumes:
-      - ./node_modules/@nathanfriend/inspirograph:/etc/nginx/html/inspirograph
+      - ./node_modules/@nathanfriend/inspiral-web:/etc/nginx/html/inspiral-web
       - ./node_modules/@nathanfriend/rook:/etc/nginx/html/rook
       - ./static/site_archive:/etc/nginx/html/site_archive
 
