@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/nfriend
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nathanfriend.io
+  * I am nfriend (https://keybase.io/nfriend) on keybase.
+  * I have a public key ASDWx4EqFqcCnDMBP1w3eN8o1VMnb4HGcRGYT2VioKKnhwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01202c7e7bff872fe69d5009693af2765a7281a2cc282b4ffce59878f95a7bbafbdd0a",
+      "host": "keybase.io",
+      "kid": "0120d6c7812a16a7029c33013f5c3778df28d553276f81c67111984f6562a0a2a7870a",
+      "uid": "cc65f83d5cba1afde2ca955fa706a419",
+      "username": "nfriend"
+    },
+    "merkle_root": {
+      "ctime": 1627936016,
+      "hash": "c6ecd1d217b1252e096eb7da2e3b5e07ac56a5b982bb3b161528674a95563ab0b3c6bd3ecd275ad97fd6f24ad630b738864008e98e57465c9a3dfeef09937e85",
+      "hash_meta": "eb64e246332767606d93ce61ab98943b9f6a45c6c2e97db5dc9f79994584b941",
+      "seqno": 20491782
+    },
+    "service": {
+      "entropy": "m0hj5DVgMTtoBCxaZiFXsc4T",
+      "hostname": "nathanfriend.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.7.0"
+  },
+  "ctime": 1627936035,
+  "expire_in": 504576000,
+  "prev": "0001d4d1da15011615c63e0bc5750cf82950751773e806aaf524dfc2b1b2f2e4",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg1seBKhanApwzAT9cN3jfKNVTJ2+BxnERmE9lYqCip4cKp3BheWxvYWTESpcCCsQgAAHU0doVARYVxj4LxXUM+ClQdRdz6Aaq9STfwrGy8uTEIDEgcHaHufMyrxcV5++xvvwy8fj7IZ2vvPDQq65sbPLpAgHCo3NpZ8RA00A7VOAo9JBdpI0YQHYtsOKl/h6Zh4HDiy7V3+7a28GSprbfNQWZ9ayg5DD0iThtmRMwSuXnOG1WAbmzcRe/B6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOxczyCBaj8MGstVdwFNruK0K9uEscfSXuK22bsT+8vuo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nfriend
+
+==================================================================
