@@ -58,7 +58,9 @@ https://nathanfriend.io.
 
 **Note:** This script only needs to be run **once**. Subsequent deploys will
 reuse these certificates, and renewals are handled automatically. Also, this
-script must be run while the Docker services are up and running.
+script must be run while the Docker services are up and running. However, this
+script _will_ need to be manually run again when any domains or subdomains are
+added (or removed).
 
 ### Variables
 
