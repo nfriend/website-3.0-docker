@@ -11,13 +11,18 @@ pushd /home/gitlabci/website-3.0-docker
 domains=(
   nathanfriend.io
   nathanfriend.com
+  nathanfriend.dev
   www.nathanfriend.io
   www.nathanfriend.com
+  www.nathanfriend.dev
   dev.nathanfriend.io
   dev.nathanfriend.com
+  dev.nathanfriend.dev
   bethany.and.nathanfriend.io
   bethany.and.nathanfriend.com
+  bethany.and.nathanfriend.dev
   www.bethany.and.nathanfriend.com
+  www.bethany.and.nathanfriend.dev
   www.bethany.and.nathanfriend.io
 )
 email="contact@nathanfriend.io"

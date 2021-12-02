@@ -196,16 +196,23 @@ entries:
 ```
 127.0.0.1   nathanfriend.io
 127.0.0.1   nathanfriend.com
+127.0.0.1   nathanfriend.dev
 127.0.0.1   www.nathanfriend.io
 127.0.0.1   www.nathanfriend.com
+127.0.0.1   www.nathanfriend.dev
 127.0.0.1   dev.nathanfriend.io
 127.0.0.1   dev.nathanfriend.com
+127.0.0.1   dev.nathanfriend.dev
 127.0.0.1   www.dev.nathanfriend.io
 127.0.0.1   www.dev.nathanfriend.com
+127.0.0.1   www.dev.nathanfriend.dev
 127.0.0.1   fake.nathanfriend.io
 127.0.0.1   fake.nathanfriend.com
+127.0.0.1   fake.nathanfriend.dev
 127.0.0.1   bethany.and.nathanfriend.com
+127.0.0.1   bethany.and.nathanfriend.dev
 127.0.0.1   www.bethany.and.nathanfriend.com
+127.0.0.1   www.bethany.and.nathanfriend.dev
 127.0.0.1   bethany.and.nathanfriend.io
 127.0.0.1   www.bethany.and.nathanfriend.io
 ```
